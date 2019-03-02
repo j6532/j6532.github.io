@@ -1,3 +1,7 @@
+$modal_open_z: 1040;
+.webWork_section {
+	overflow: visible;
+}
 .grid_webWork {
 	$space: 15px;
 	@include clearfix();
@@ -5,12 +9,97 @@
 	@include col(xs, 9);
 	@include grid_space($space);
 	.item {
+		position: relative;
 		@include col(0, 0);
 		@include col(xs, 20%);
 		padding-bottom: $space;
+		overflow: visible;
 	}
 	.img {
 		@include bgi_img(1, 1, 100%);
+		@include bg-img(contain, 1);
 		background-color: #eee;
 	}
+	.mask {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: calc(100% - #{$space});
+		padding-top: calc(100% - #{$space});
+		z-index: 0;
+		background-color: #f8f8f8;
+		@include transition(all ease-in-out .35s);
+	}
+	.item {
+		&.open {
+			z-index: $modal_open_z; 
+			.mask {
+				$offset: 10px;
+				width: calc(100vw + #{$offset} * 2);
+				height: calc(100vh + #{$offset} * 2);
+			}
+		}
+	}
 }
+
+// modal
+.workModal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: $modal_open_z + 1;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	@include clearfix();
+	@include transition(all .3s ease-in-out);
+	// header
+	.m_header {
+		padding-bottom: 30px;
+	}
+	.m_header, .title, .notes, .date, .workLink {
+		text-align: center;
+	}
+	.notes {
+		li {
+			display: inline-block;
+		}
+		li + li:before {
+			content: '/';
+			margin: 0 8px;
+			color: $exLightText;
+			display: inline-block;
+		}
+	}
+
+	// body
+	.m_body {
+		padding: 0 60px;
+	}
+	.img {
+		box-shadow: $sOn;
+		width: 1200px;
+		max-width: 100%;
+	}
+
+	// modal
+	display: none;
+	opacity: 0;
+	top: -60px;
+	&.open {
+		display: block;
+	}
+	&.opened {
+		opacity: 1;
+		top: 0;  
+	}
+}
+
+// body
+.disable-scroll {
+	overflow: hidden;
+	padding-right: 8px;
+}
+
+
+

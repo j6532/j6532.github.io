@@ -23,7 +23,7 @@
 /* ================================
 Variables, Functions & Mixins 
 ================================ */
-/*no transiton*/
+/* no transiton */
 .bgi_16x9 {
   width: 100%;
   padding: 0;
@@ -1306,41 +1306,6 @@ a:hover, a:focus {
 }
 
 /* Button Main */
-.btn_main {
-  line-height: 1em;
-  padding: 14px 20px;
-  border-radius: 4px;
-  background-color: #193625;
-  color: white;
-  display: inline-block;
-  border: 1px solid transparent;
-  -webkit-transition: all 0.1s ease-in-out;
-  -khtml-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-}
-.btn_main:hover, .btn_main:focus {
-  color: white;
-  background-color: #112519;
-}
-.btn_main.large {
-  font-size: 20px;
-  padding: 18px 24px;
-}
-.btn_main.radius {
-  border-radius: 30px;
-}
-.btn_main.reverse {
-  background-color: white;
-  color: #193625;
-}
-
-.btn_main, .btn_special {
-  white-space: nowrap;
-}
-
 /* Btn Wrapper
 -------------- */
 .btn_wr .btn_main, .btn_wr .btn_special {
@@ -4673,6 +4638,7 @@ textarea:focus {
 .crsl_basic .img,
 .grid_basic .img,
 .list_basic .img {
+  position: relative;
   -webkit-transition: all 0.1s ease-in-out;
   -khtml-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
@@ -4708,6 +4674,35 @@ textarea:focus {
 .list_basic .title {
   margin: 0;
 }
+.btn_main {
+  display: inline-block;
+  padding: 8px 15px;
+  border: 1px solid #e1e1e1;
+  -webkit-border-radius: 20px;
+  -khtml-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  line-height: 1em;
+  -webkit-transition: background 0.2s ease-in-out 0.1s, box-shadow ease-in-out 0.2s;
+  -khtml-transition: background 0.2s ease-in-out 0.1s, box-shadow ease-in-out 0.2s;
+  -moz-transition: background 0.2s ease-in-out 0.1s, box-shadow ease-in-out 0.2s;
+  -ms-transition: background 0.2s ease-in-out 0.1s, box-shadow ease-in-out 0.2s;
+  -o-transition: background 0.2s ease-in-out 0.1s, box-shadow ease-in-out 0.2s;
+  transition: background 0.2s ease-in-out 0.1s, box-shadow ease-in-out 0.2s;
+}
+.btn_main:hover {
+  background-color: #e1e1e1;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transition: background ease-in-out 0.2s, box-shadow 0.2s ease-in-out 0.1s;
+  -khtml-transition: background ease-in-out 0.2s, box-shadow 0.2s ease-in-out 0.1s;
+  -moz-transition: background ease-in-out 0.2s, box-shadow 0.2s ease-in-out 0.1s;
+  -ms-transition: background ease-in-out 0.2s, box-shadow 0.2s ease-in-out 0.1s;
+  -o-transition: background ease-in-out 0.2s, box-shadow 0.2s ease-in-out 0.1s;
+  transition: background ease-in-out 0.2s, box-shadow 0.2s ease-in-out 0.1s;
+}
+
 /* ======================== 
 Pages Layout
 ======================== */
@@ -5007,10 +5002,17 @@ Pages Layout
 
 /* Pages
 ----------------- */
+.home_section {
+  overflow-x: hidden;
+}
 .home_section:after, .home_section:before {
   content: "";
   display: block;
   clear: both;
+}
+
+.webWork_section {
+  overflow: visible;
 }
 
 .grid_webWork {
@@ -5027,9 +5029,11 @@ Pages Layout
   padding-right: 15px;
 }
 .grid_webWork .item {
+  position: relative;
   float: left;
   width: 20%;
   padding-bottom: 15px;
+  overflow: visible;
 }
 .grid_webWork .img {
   width: 100%;
@@ -5040,7 +5044,93 @@ Pages Layout
   background-position: center center;
   background-repeat: no-repeat !important;
   z-index: 1;
+  background-size: contain;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat !important;
+  z-index: 1;
   background-color: #eee;
+}
+.grid_webWork .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 15px);
+  padding-top: calc(100% - 15px);
+  z-index: 0;
+  background-color: #f8f8f8;
+  -webkit-transition: all ease-in-out 0.35s;
+  -khtml-transition: all ease-in-out 0.35s;
+  -moz-transition: all ease-in-out 0.35s;
+  -ms-transition: all ease-in-out 0.35s;
+  -o-transition: all ease-in-out 0.35s;
+  transition: all ease-in-out 0.35s;
+}
+.grid_webWork .item.open {
+  z-index: 1040;
+}
+.grid_webWork .item.open .mask {
+  width: calc(100vw + 10px * 2);
+  height: calc(100vh + 10px * 2);
+}
+
+.workModal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1041;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -khtml-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: none;
+  opacity: 0;
+  top: -60px;
+}
+.workModal:after, .workModal:before {
+  content: "";
+  display: block;
+  clear: both;
+}
+.workModal .m_header {
+  padding-bottom: 30px;
+}
+.workModal .m_header, .workModal .title, .workModal .notes, .workModal .date, .workModal .workLink {
+  text-align: center;
+}
+.workModal .notes li {
+  display: inline-block;
+}
+.workModal .notes li + li:before {
+  content: "/";
+  margin: 0 8px;
+  color: #999;
+  display: inline-block;
+}
+.workModal .m_body {
+  padding: 0 60px;
+}
+.workModal .img {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  width: 1200px;
+  max-width: 100%;
+}
+.workModal.open {
+  display: block;
+}
+.workModal.opened {
+  opacity: 1;
+  top: 0;
+}
+
+.disable-scroll {
+  overflow: hidden;
+  padding-right: 8px;
 }
 
 /* Contact

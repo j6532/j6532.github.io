@@ -90,12 +90,12 @@ a:hover,a:focus {
 	@include btn_normal();
 }
 
-.btn_main {
-	@include btn_main();
-}
-.btn_main, .btn_special {
-  white-space: nowrap;
-}
+// .btn_main {
+// 	@include btn_main();
+// }
+// .btn_main, .btn_special {
+//   white-space: nowrap;
+// }
 
 /* Btn Wrapper
 -------------- */

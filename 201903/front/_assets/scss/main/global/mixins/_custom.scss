@@ -52,14 +52,14 @@
 // Animate 
 // -----------------
 @mixin transition2s {
-  @include transition(all .2s ease-in-out)
+  @include transition(all .2s ease-in-out);
 }
 @mixin transition1s {
-  @include transition(all .1s ease-in-out)
+  @include transition(all .1s ease-in-out);
 }
-/*no transiton*/
+/* no transiton */
 @mixin transition0s {
-  @include transition(all 0s ease-in-out)
+  @include transition(all 0s ease-in-out);
 }
 
 
