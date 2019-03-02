@@ -1,0 +1,41 @@
+/* Column Desktop */  // Par:form_column
+
+$w:        '(6em + 8px * 2)';
+.title {
+  width: calc(#{$w});
+  padding:  8px 8px 0;
+  // padding-right: 8px;
+}
+.content {
+  width: calc(100% - #{$w});
+}
+.divide_text {
+  padding-left: $w;
+}
+@for $i from 2 through 10 {
+  .item.title-w-#{$i} {
+    .title {
+      width: calc(1em * #{$i} + 16px);
+    }
+    .content {
+      width: calc(100% - (1em * #{$i} + 16px));
+    }
+  }
+}
+/* Item Width */
+>.item {
+  &.w-50 {
+    width: 50%;
+  }
+}
+
+&.border {
+  > .item + .item {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-color: $fc_bdc;
+  }
+  > .item.w-50 + .item.w-50:nth-child(2) {
+    border-top-width: 0;
+  }
+}

@@ -1,0 +1,41 @@
+@mixin btn_arrow_btm {
+  position:relative;
+  display: block;
+  text-align: center;
+  // margin-top: 20px;
+  padding-bottom: 20px;
+  &:before {
+    content: '\f103';
+    position: absolute;
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: $hl;
+    bottom: 0;
+    left: calc(50% - 6px);
+  }
+  &:hover {
+    text-shadow: 0 3px 12px rgba(255,255,255,0.7);
+    &:before {
+      text-shadow: 0 3px 12px rgba(255,255,255,0.7);
+      animation-name: arrowBtm;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+.btn_arrow_btm {
+  @include btn_arrow_btm;
+}
+@keyframes arrowBtm {
+  from {
+  transform: translate3d(0, 0px, 0);
+  }
+
+  50% {
+   transform: translate3d(0, 8px, 0);
+  }
+  100%{
+  transform: translate3d(0, 0px, 0);
+  }
+}

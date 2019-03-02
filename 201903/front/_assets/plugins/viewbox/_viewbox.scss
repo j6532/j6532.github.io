@@ -1,0 +1,175 @@
+//2018.05.31 updated by Jenny
+$vb_bg:					rgba(#fff, 0.8);
+$vb_bd:					rgba(#fff, 1);
+$vb_font:				rgba(#444, 1);
+$vb_font_size:	18px;
+$vb_pd:					4px;
+$vb_head_align:	center;
+
+.viewbox-container{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.5);
+	z-index: 1040;
+	color: $vb_font;
+	font-size: $vb_font_size;
+}
+.viewbox-body{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: $vb_bg;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+	overflow: auto;
+	border: 1px solid $vb_bd;
+}
+.viewbox-header{
+	margin: $vb_pd;
+	text-align: $vb_head_align;
+}
+.viewbox-content{
+	margin: $vb_pd;
+	width: 300px;
+	height: 300px;
+}
+.viewbox-footer{
+	margin: $vb_pd;
+}
+.viewbox-content .viewbox-image{
+	width: 100%;
+	height: 100%;
+}
+
+/* buttons */
+.viewbox-button-default{
+	cursor: pointer;
+    height: 64px;
+    width: 64px;
+}
+.viewbox-button-default > svg{
+	width: 100%;
+	height: 100%;
+	background: inherit;
+	fill: inherit;
+	pointer-events: none;
+	transform: translateX(0px);
+	background-color: transparent;
+}
+.viewbox-button-default,
+.viewbox-button-default:hover{
+	fill: #fff;
+}
+.viewbox-button-close,
+.viewbox-button-next,
+.viewbox-button-prev{
+	background-color: rgba(0,0,0,0.6);
+}
+.viewbox-button-close:hover,
+.viewbox-button-next:hover,
+.viewbox-button-prev:hover{
+   background-color: rgba(0,0,0,0.7);
+}
+
+.viewbox-button-close{
+	position: absolute;
+	bottom: 40px;
+	right: calc(50% - 32px);
+	z-index: 9;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	padding: 10px;
+}
+.viewbox-button-next,
+.viewbox-button-prev{
+	position:absolute;
+	top: 50%;
+	height: 64px;
+    width: 64px;
+	margin: -64px 0 0;
+	z-index:9;
+	border-radius: 4px;
+}
+.viewbox-button-next{
+	right: 10px;
+}
+.viewbox-button-prev{
+	left: 10px;
+}
+@media (max-width: 480px) {
+	.viewbox-button-close{
+		/*top: 0;*/
+		/*right: 0;*/
+	}
+	.viewbox-button-close:hover{
+	}
+	.viewbox-button-next,
+	.viewbox-button-prev{
+		height: 50px;
+    	width: 50px;
+		margin-top: -25px;
+	}
+	.viewbox-button-next{
+		right:-4px;
+	}
+	.viewbox-button-prev{
+		left:-4px;
+	}
+}
+
+/* loader */
+.viewbox-container .loader{
+	widows: 100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin:-25px 0 0 -25px;
+}
+.viewbox-container .loader *{
+	margin: 0;
+	padding: 0;
+}
+.viewbox-container .loader .spinner{
+	width: 50px;
+	height: 50px;
+	position: relative;
+	margin: 0 auto;
+}
+.viewbox-container .loader .double-bounce1,
+.viewbox-container .loader .double-bounce2{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: #999;
+	opacity: 0.6;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+	animation: sk-bounce 2.0s infinite ease-in-out;
+}
+.viewbox-container .loader .double-bounce2 {
+	-webkit-animation-delay: -1.0s;
+	animation-delay: -1.0s;
+}
+@-webkit-keyframes sk-bounce{
+	0%, 100% { -webkit-transform: scale(0.0) }
+	50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce{
+	0%, 100% { 
+		transform: scale(0.0);
+		-webkit-transform: scale(0.0);
+	} 50% { 
+		transform: scale(1.0);
+		-webkit-transform: scale(1.0);
+	}
+}

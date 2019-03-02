@@ -1,0 +1,43 @@
+@mixin btn_ghost($arrow: true) {
+  display: inline-block;
+  position: relative;
+  line-height: 1em;
+  padding: 0.5em;
+  border: 1px solid;
+  @if $arrow == true {
+    padding-right: 40px;
+    &:before {
+      content: '\f101';
+      position: absolute;
+      font-family: FontAwesome;
+      font-size: 20px;
+      height: 20px;
+      line-height: 20px;
+      top: calc(50% - 10px);
+      right: 10px;
+    }
+  }
+  @each $class, $color1, $color2 in 
+    (' ',           $hl,       $white ),
+    ('.main-text',  $mainText, $white ),
+    ('.reverse',    $white,    $mainText ) {
+      &#{$class} {
+        border-color: $color1;
+        background-color: transparent;
+        color: $color1;
+        &:before {
+          color: $color1;
+        }
+        &:hover {
+          color: $color2;
+          background-color: $color1;
+          &:before {
+            color: $color2;
+          }
+        }
+      }
+    }
+}
+.btn_ghost {
+  @include btn_ghost();
+}

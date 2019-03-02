@@ -1,0 +1,57 @@
+$in_bd:   #dfdfdf;
+
+.input-number {
+  &:after, &:before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  >input {
+    padding: 0 12px;
+    vertical-align: top;
+    text-align: center;
+    outline: none; 
+    border-radius: 0;
+    width: calc(100% - 60px);
+    margin: 0 !important;
+  }
+  >input,
+  .decrement,
+  .increment {
+    border-width: 1px;
+    border-style: solid;
+    border-color: $in_bd;
+    height: 34px;
+    user-select: none; 
+    display: block;
+    float: left;
+  }
+  .decrement,
+  .increment {
+    // display: inline-block;
+    width: 30px;
+    line-height: 28px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer; 
+    padding: 0;
+    background:   rgba(black,0.05);
+    color:        #444;
+    &:active {
+      background: rgba(black,0.12);
+    }
+  }
+  .decrement {
+    border-right: none;
+    border-radius: 4px 0 0 4px; 
+  }
+  .increment {
+    border-left: none;
+    border-radius: 0 4px 4px 0; 
+  }
+  &.w-50 {
+    >input {
+      width: calc(50% - 60px);
+    }
+  }
+}

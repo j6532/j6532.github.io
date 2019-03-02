@@ -1,0 +1,18 @@
+@mixin scroll_bar($width: 4px, $background-color: #ccc,
+  $color: rgba($hl,0.5)) {
+  &::-webkit-scrollbar {//whole scrollbar
+    width: $width;
+    height: $width;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-track {//track
+    background-color: $background-color;
+  }
+  &::-webkit-scrollbar-thumb {//dragging bar
+    background: $color;
+  }
+}
+
+/* --------------------------
+2018.11.07 - Edit scrollbar
+-------------------------- */

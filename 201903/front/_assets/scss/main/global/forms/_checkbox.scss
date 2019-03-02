@@ -1,0 +1,190 @@
+/* 2018.10.04 */
+// Variables: $hl
+
+$ckb_cl:    $hl;
+$ckb_bd:    $mainBorder;
+$ckb_bg:    $mainBg;
+
+// size
+$ckb_wr_size: 33px;
+$box_size:	20px;
+
+/*--- Custom Checkbox ---*/
+.checkbox-primary, .radio-primary {
+	display: block;
+	position: relative;
+	min-width: $ckb_wr_size;
+	min-height: 33px;
+	padding-left: $ckb_wr_size !important;
+	// cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin: 0px 0;
+	.checkmark {
+		position: absolute;
+		top: calc(#{$ckb_wr_size} / 2 - #{$box_size} / 2);
+		left: 			$ckb_wr_size/2-$box_size/2;
+		height: 		$box_size;
+		width: 			$box_size;
+		background-color: #fff;
+		border: 1px solid $ckb_bd;
+		border-radius: 2px;
+		cursor: pointer;
+		&:after {
+			content: "";
+			position: absolute;
+			display: none;
+			left: 5px;
+			top: 1px;
+			width: 8px;
+			height: 12px;
+			border: solid white;
+			border-width: 0 3px 3px 0;
+			@include transform(rotate(45deg));
+		}
+	}
+	input[type="checkbox"], input[type="radio"] {
+		position: absolute;
+		opacity: 0;
+		margin: 0;
+		height: 0;
+		width: 0;
+		/* Disabled
+		----------------- */
+		&:disabled {			
+			$ckb_dis_cl: #ccc;
+			~ .checkmark {
+				cursor: not-allowed;
+				border-color: $ckb_dis_cl;
+			}
+			&:checked ~ .checkmark {
+				border-color: $ckb_dis_cl;
+				&:after {
+					display: block;
+					background-color: $ckb_dis_cl;
+				}
+			}
+		}
+	}
+	/* Hover
+	-------------- */
+	&:hover {
+		input[type="checkbox"], input[type="radio"] {
+			~ .checkmark {
+				background-color: #fcfcfc;
+			}
+		}
+	}
+	/* Checked
+	----------------- */
+	input[type="checkbox"], input[type="radio"] {
+		&:checked, &:checked:hover {
+			~ .checkmark {
+				background-color: $ckb_cl;
+				border-color: $ckb_cl;
+				&:after {
+					display: block;
+				}
+			}
+		}
+	}
+}
+/* radio */
+.radio-primary .checkmark {
+	border-radius: 20px;
+	&:after {
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		border: 4px solid $ckb_bg;
+		border-radius: 50%;
+		background-color: $ckb_cl;
+		@include transform(rotate(0deg));
+	}
+}
+
+/*--- Checkbox inline item ---*/
+.checkbox-inline, .radio-inline {
+	max-height: 80vh;
+	// overflow: auto;
+	border: 1px solid $ckb_bd;
+	border-radius: 4px;
+	width: 100%;
+	padding-left: 0;
+	margin-left: 0 !important; // for bootstrap
+	&.no-border {
+		border: 0px;
+	}
+	> .item {
+		display: inline-block;
+		> label {
+			$line-height: 1.5em;
+			$height: 33px;
+			display: block;
+			width: auto;
+			line-height: $line-height;
+			padding:  calc((#{$height} - #{$line-height}) / 2) 8px;
+			border-radius: 4px;
+		}
+	}
+	/* a tag */
+	a {
+		font-size: inherit;
+		color: $blue;
+		&:hover {
+			color: $blue;
+			text-decoration: underline;
+		}
+	}
+	> .item:hover > label {
+		background-color: rgba(#000, 0.02);
+	}
+}
+
+/* Width */
+.checkbox-inline, .radio-inline {
+	> .item {
+		&.w-100 {
+			width: 100%;
+		}
+	}
+}
+
+/*--- Checkbox list ---*/
+// .checkbox-list {
+// 	/*max-height: 80vh;*/
+// 	overflow: auto;
+// 	border: 1px solid #ddd;
+// 	border-radius: 4px;
+// 	padding: 0;
+// 	margin-bottom: 0;
+// 	> .item > label {
+// 		display: block;
+// 		width: 100%;
+// 		border-bottom: 1px solid #ddd;
+// 		padding: 8px;
+// 	}
+// 	> .item:nth-last-child(1) > label {
+// 		border-bottom: 0px;
+// 	}
+// 	> .item:hover > label {
+// 		background-color: rgba(#000, 0.02);
+// 	}
+// }
+
+/* checkbox in table
+--------------------- */
+table {
+	td >, th> {
+		.checkbox-primary, .radio-primary {
+			display: inline;
+			// min-height: auto;
+			.checkmark {
+				top: calc(50% - #{$box_size} / 2);
+			}
+		}
+	}
+}

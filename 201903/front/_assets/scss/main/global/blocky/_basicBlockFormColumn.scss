@@ -1,0 +1,53 @@
+/* Form Column, List in Basic Block */
+
+//mobile
+
+.blocky .form_column {
+  >.item {
+    // border-top: 1px solid $bb_bd;
+    padding: $bb_padding 0;
+    // float: left;
+    // width: 100%;
+    &:nth-child(1) {
+      // border-top-width: 0;
+    }
+    // &.w-50 {
+    //  width: 50%;
+    //  &:nth-child(1),&:nth-child(2) {
+    //    border-top-width: 0;
+    //  }
+    //  @media (max-width: $screen-xs-max) {
+    //    width: 100%;
+    //    &:nth-child(2) {
+    //      border-top-width: 1px;
+    //    }
+    //  }
+    // }
+  }
+}
+.blocky .form_column {
+  padding: 8px 16px;
+  //Style
+  >.item {
+    >.title {
+      vertical-align: top;
+    }
+  }
+  @media (max-width: $screen-sm-max) {
+    &.sm_style {
+      padding: 0;
+      >.item {
+        padding: 0;
+        .title {
+          padding-bottom: 0;
+        }
+        .content {
+          padding: $bb_padding;
+        }
+      }
+      >.item + .item {
+        border-top: 3px double $bb_bd;
+      }
+    }
+  }
+}

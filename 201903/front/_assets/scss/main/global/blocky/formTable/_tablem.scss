@@ -1,0 +1,48 @@
+// parent: table
+/* 2018.10.09 */
+& {
+  table-layout: fixed;
+}
+tr {
+  border-bottom: 3px double $bb_bd;
+  &:nth-last-child(1) {
+    border-bottom: 0px;
+  }
+  th,td {
+    padding-top: $bb_padding/2;
+    padding-bottom: $bb_padding/2;
+  }
+  th {
+    display: none;
+  }
+  td {
+    display: block;
+    border-bottom: 1px dotted rgba($bb_bd, 0.7);
+    padding-left: 80px;
+    position: relative;
+    min-height: calc(1em + 8px);
+    &:before {
+      content: attr(data-head) "";
+      font-weight: bold;
+      font-size: 12px;
+      position: absolute;
+      line-height: 1em;
+      left: $bb_padding;
+      top: calc(50% - 0.5em);
+      color: $mainText;
+    }
+    &:nth-last-child(1) {
+      border-bottom: 0;
+    }
+  }
+}
+thead {
+  display: none;
+}
+.align-left,.align-center,.align-right {
+  text-align: left !important;
+}
+
+tbody, tfoot, thead, tr {
+  vertical-align: top;
+}

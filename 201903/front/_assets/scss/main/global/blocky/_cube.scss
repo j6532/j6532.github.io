@@ -1,0 +1,49 @@
+/* Cols in Basic Block
+Use or Not?
+------------------------- */
+/* 2018.10.11 */
+.cube-row {
+  @include clearfix();
+  margin: 0 0px !important;
+  padding: 8px;
+  #{$cols} {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .cube {
+    float: left;
+    width: 100%;
+    @media #{$m-sm-min} {
+      &.w-50 {
+        width: 50%;
+      }
+    }
+  }
+}
+
+/* Cube
+------------------ */
+.cube {
+  padding: 8px 8px;
+  &.shadow:hover {
+    box-shadow: $sOn;
+  }
+}
+.cube-header {
+  padding: 4px 8px;
+  background: #eee;
+  // border-radius: 15px;
+  border-radius: 4px;
+}
+.cube-body {
+  padding: 2px 0;
+}
+.cube-footer {
+
+}
+
+/* Form in Cube
+--------------- */
+.cube {
+  @include form_in_parent();
+}

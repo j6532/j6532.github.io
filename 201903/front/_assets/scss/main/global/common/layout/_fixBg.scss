@@ -1,0 +1,5 @@
+.bg_fix {
+  @include fix-background($z-index:-2);
+  @include bg-full($z-index:-2);
+  background-image: url(../images/common/bg_fix.jpg);
+}

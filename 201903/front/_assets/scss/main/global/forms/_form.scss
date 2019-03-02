@@ -1,0 +1,127 @@
+
+// Variable
+@import "_formVariables";
+
+// Input Components
+@import "_input";
+@import "_caretSelect";
+@import "_input-daterange";
+@import "_checkbox";
+@import "_unitInput";
+@import "_required";
+@import "_searchInput";
+
+// Input Layout
+
+@import "_divideText";
+@import "_inputInline";
+@import "_inputSimple";
+@import "_inputRow";
+
+
+@import "_hr";
+
+// Not Using
+// ========================
+
+// /* Editor Typography*/
+// .edit_typo img {
+//     margin-top: 5px;
+//     margin-bottom: 5px;
+// }
+
+// .border {
+//   >.input_simple.inline {
+//     padding: 8px 0 !important;
+//     border-bottom: 1px solid $lightBorder;
+//     &:nth-last-child(1) {
+//       border-bottom: 0;
+//     }
+//   }
+// }
+
+
+// @import "_fileUpload";
+
+// /* preview */
+
+// .preview {
+//   display: block;
+//   width: 120px;
+//   height: 120px;
+//   margin: 20px;
+//   border-radius: 4px;
+//   overflow: hidden;
+//   background-image: url(../images/common/user_default.jpg);
+//   background-size: cover;
+// }
+
+// /* upload_music */
+
+// .upload_music {
+//   .attach_path {
+//     display: block;
+//     float: left;
+//     font-style: italic;
+//     width: calc(100% - 120px);
+//     border-top-right-radius: 0px;
+//     border-bottom-right-radius: 0px;
+//   }
+//   .upload {
+//     display: block;
+//     float: left;
+//     padding: 11px;
+//     font-size: 13px;
+//     font-weight: bold;
+//     width: 120px;
+//     border-radius: 0 4px 4px 0;
+//     text-align: center;
+//     margin: 0;
+//     &:invalid + span { 
+//       color: red; 
+//     }
+//     &:valid + span { 
+//       color: white; 
+//     }
+//     input[type="file"] { 
+//       display: none; 
+//     }
+//   }
+// }
+
+
+// ul.info_inline {
+//   li {
+//     font-size: 14px;
+//     display: inline-block;
+//     padding: 0 8px;
+//     span {
+//       color: $hl;
+//     }
+//   }
+// }
+
+
+// // checkbox
+// // -----------------
+// .checkbox-inline {
+//   .checkbox-primary {
+//     input {
+//       width: 40px;
+//     }
+//     a {
+//       color: $hl;
+//       &:hover {
+//         color: $hl;
+//         text-decoration: underline;
+//       }
+//     }
+//   }
+// }
+// // form-control
+// // ---------------------
+// .form-control {
+//   border-radius: 2px;
+//   padding: 2px 8px;
+//   height: auto !important;
+// }

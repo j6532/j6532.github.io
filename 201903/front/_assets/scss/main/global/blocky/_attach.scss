@@ -1,0 +1,60 @@
+/* Attachment List
+------------------ */
+.attach_list {
+  text-align: left !important;
+  padding: 8px/2 !important;
+  .item {
+    padding: 4px 8px;
+    border-top-style: solid;
+    border-top-color: $lightBorder;
+    
+  }
+  .item + .item {
+    border-top-width: 1px;
+  }
+}
+.attach_other,
+.attach_doc, 
+.attach_pdf,
+.attach_ppt,
+.attach_img {
+  position: relative;
+  text-align: left;
+  display: inline-block;
+  padding: 4px 0;
+  padding-left: 40px;
+  &:hover{
+  }
+  &:before {
+    content: '';
+    width: 24px;
+    height: 30px;
+    @include bg-img(contain);
+    background-image: url(../images/common/ic/ic_file_other.png);
+    position: absolute;
+    left: 8px;
+    top: calc(50% - 15px);
+  }
+  @media #{$m-xs-max} {
+    padding-left: 30px;
+    &:before {
+      $ratio: 0.75;
+      width: 24px*$ratio;
+      height: 30px*$ratio;
+      left: 4px;
+      top: 3px;
+    }
+  }
+}
+.attach_doc:before {
+  background-image: url(../images/common/ic/ic_file_doc.png);
+}
+.attach_pdf:before {
+  background-image: url(../images/common/ic/ic_file_pdf.png);
+}
+.attach_ppt:before {
+  background-image: url(../images/common/ic/ic_file_ppt.png);
+}
+.attach_img:before {
+  background-image: url(../images/common/ic/ic_file_img.png);
+}

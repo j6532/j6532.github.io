@@ -1,0 +1,165 @@
+ // /* 2018.10.02 */
+
+@mixin shadowB ($level, $color, $density){
+  box-shadow: 0 $level $level * 3.5 rgba($color, $density);
+}
+@mixin shadowT ($level, $color, $density){
+  text-shadow: 0 $level $level * 3 rgba($color, $density);
+}
+
+// Parallax & Background
+@mixin fix-background($z-index:-1) {
+  background-size: cover !important;
+  @media #{$m-lg-min} {
+    // position: relative;
+    background-size: cover !important;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    z-index: $z-index;
+  }
+}
+@mixin bg-img( $background-size:contain,$z-index:1) {
+  // position: relative;
+  background-size: $background-size;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat !important;
+  z-index: $z-index;
+}
+@mixin cover-background($z-index:-1) {
+  @include bg-img(cover, $z-index);
+}
+
+@mixin bg-full($z-index:0) {
+  position: absolute; 
+  height: 100%; 
+  width: 100%; 
+  z-index: $z-index; 
+  top:0; 
+  left: 0 
+}
+// @mixin bg($background-size) {
+//  background-size: $background-size;
+//  overflow: hidden;
+//  background-position: center center;
+//  background-repeat: no-repeat; 
+// }
+
+
+// ----------------- 
+// Animate 
+// -----------------
+@mixin transition2s {
+  @include transition(all .2s ease-in-out)
+}
+@mixin transition1s {
+  @include transition(all .1s ease-in-out)
+}
+/*no transiton*/
+@mixin transition0s {
+  @include transition(all 0s ease-in-out)
+}
+
+
+
+// -----------------
+// Filter
+// -----------------
+@mixin filter ($intensity) {
+  -webkit-filter: $intensity;
+      filter: $intensity;
+}
+@mixin filter-gray ($intensity) {
+  -webkit-filter: grayscale($intensity);
+      filter: grayscale($intensity);
+}
+
+
+// Shorten P with CSS
+// -------------------
+@mixin shorten_p($line-height, $rows) {
+  overflow: hidden;
+  line-height: $line-height;
+  max-height: $line-height * $rows;
+  @if $rows == 1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+  } @else {
+    white-space: normal;
+    text-overflow: initial;
+  }
+}
+
+@mixin scroll_p($line-height, $rows) {
+  overflow-y: auto;
+  padding: 2px;
+  padding-right: 10px;
+  line-height: $line-height;
+  max-height: $line-height * $rows;
+}
+
+// BGI IMAGES
+// --------------------
+@mixin bgi_img ($rw, $rh, $width: 100%) {
+  width: $width;
+  padding: 0;
+  padding-top: $rh / $rw * $width;
+  @include bg-img(cover, 1);
+}
+
+.bgi_16x9 {
+  @include bgi_img(16, 9);
+}
+
+.bgi_4x3 {
+  @include bgi_img(4, 3);
+}  
+
+// Paragraph vertical align middle
+// -------------------------------
+@mixin vam($type) {
+  @if $type == wrapper {
+    position: relative;
+    height: 1px;
+    >.container {
+      position: relative;
+      height: 100%;
+      > #{$cols} {
+        height: 100%;
+      }
+    }
+    > #{$cols} {
+      height: 100%;
+    }
+  } 
+  @if $type == table {
+    display: table;
+    // @include bg-full(1);
+    height: 100%;
+  } 
+  @if $type == td {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+// Absolute align middle
+// -------------------------------
+@mixin aam($type, $size) {
+  @if $type == icon {
+    width: $size;
+    height: $size;
+    line-height: $size;
+    border-radius: $size /2;
+    left: calc(50% - #{$size} / 2);
+    top: calc(50% - #{$size} / 2);
+    text-align: center;
+  }
+}
+
+
+
+

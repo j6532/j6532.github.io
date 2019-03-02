@@ -1,0 +1,55 @@
+$defaultBtn:        rgba($hl,1);
+$successBtn:        rgba($success,0.65);
+$infoBtn:           darken(rgba($info,0.65),5%);
+$warningBtn:        darken(rgba($warning,0.65),10%);
+$dangerBtn:         rgba($danger,0.5);
+$defaultBtnColor:   #fff;
+$reverseBtn:        lighten($hl,60%);
+@mixin btnAction($color:$defaultBtn) {
+  border: 1px solid $color;
+  background-color: $color;
+  &:hover, &:focus {
+   background-color: darken($color, 10%);
+   border-color: darken($color, 10%);
+  }
+}
+.btn_action {
+  display: inline-block;
+  padding: 3px 5px;
+  margin: 2px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1em;
+  border-radius: 4px;
+  color: $defaultBtnColor;
+  text-align: center;
+  white-space: nowrap;
+  @include transition0s();
+  @include btnAction;
+  &:hover, &:focus {
+   color: $defaultBtnColor;
+  }
+  &.full {
+  @include btnAction($hl);
+  }
+  i {
+   width: 16px;
+   height: 16px;
+   line-height: 16px;
+  }
+  &.warning {
+   @include btnAction($warningBtn);
+  }
+  &.danger {
+   @include btnAction($dangerBtn);
+  }
+  &.outline {
+    border: 1px solid $hl;
+    background-color: transparent;
+    color: $hl;
+    &:hover {
+     background-color: $hl;
+     color: white;
+    }
+  }
+}

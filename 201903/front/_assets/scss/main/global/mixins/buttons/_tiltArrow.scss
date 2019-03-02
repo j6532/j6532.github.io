@@ -1,0 +1,50 @@
+@mixin btn_tilt_arrow(
+  $bgc:     transparent, 
+  $cl:      $hl, 
+  $hv_bgc:  $hl,
+  $hl_cl:   #fff      ) 
+{
+  display: inline-block;
+  position: relative;
+  line-height: 1em;
+  padding: 12px;
+  padding-right: 40px;
+  color: $cl;
+  margin: 0 10px;
+  &:before {
+    content: '\f101';
+    position: absolute;
+    font-family: FontAwesome;
+    font-size: 20px;
+    height: 20px;
+    line-height: 20px;
+    top: calc(50% - 0.5em);
+    right: 10px;
+    color: $cl;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border: 1px solid $cl;
+    background-color: $bgc;
+    @include transform(skew(20deg));
+    z-index: -1;
+  }
+  &:hover {
+    color: $hl_cl;
+    &:after {
+      border-color: transparent;
+      background-color: $hv_bgc;
+    }
+    &:before {
+      color: $hl_cl;
+    }
+  }
+}
+.btn_tilt_arrow {
+  @include btn_tilt_arrow();
+}

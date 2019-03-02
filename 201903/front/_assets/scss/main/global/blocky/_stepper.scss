@@ -1,0 +1,30 @@
+/* Stepper */
+.stepper {
+  padding: 4px;
+  margin-bottom: $bb_padding * 2;
+  background-color: $st_bg;
+  >li {
+    text-align: center;
+    border-right: 1px solid $st_bd;
+    padding: 5px;
+    &:nth-last-child(1) {
+      border-right: 0px;
+    }
+    p {
+      margin: 0;
+    }
+    p.step {
+      font-size: 11px;
+      font-weight: $font_weight_bold;
+    }
+    //Active
+    p {color:       $st_tx_cl}
+    p.step {color:  $st_color}
+    &.active {
+      background-color: $st_act_bg;
+      border: 0;
+      p {color:     $st_act_tx_cl}
+      .step {color: $st_act_st_cl}
+    }
+  }
+}

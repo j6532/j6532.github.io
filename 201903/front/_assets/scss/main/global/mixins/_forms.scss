@@ -1,0 +1,27 @@
+// /* 2018.10.05 */
+@mixin form_vertical_space {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+@mixin form_in_parent {
+  input, textarea, select {
+    display: block;
+    width: 100%;
+  }
+  .caret_select {
+    display: block;
+  }
+  input, textarea, .caret_select {
+    @include form_vertical_space();
+  }
+  .checkbox-inline, .radio-inline {
+    margin-top: 2px;
+  }
+  .checkbox-inline + .checkbox-inline {
+    margin-top: 2px;
+  }
+  .radio-inline + .radio-inline {
+    margin-top: 2px;
+  }
+}

@@ -1,0 +1,100 @@
+// -------------------
+// * Icons
+// -------------------
+@mixin mixin_icons($w, $h, $x, $y, $ratio, $bgsw) {
+  // @if $ratio == 1 {
+  //   width:  $w; 
+  //   height: $h;
+  //   background-position: $x*-1 $y*-1;
+  //   background-size: $bgsw auto;
+  // } @else {
+    width:  $w*$ratio; 
+    height: $h*$ratio;
+    background-position: $x*-1*$ratio $y*-1*$ratio;
+    background-size: $bgsw*$ratio auto;
+  // }
+} 
+@mixin icons($name) {
+  $bgsw: 600px;
+  content: '';
+  background-image: url(../images/common/icons.png);
+  background-size: $bgsw auto;
+  // nav
+  @if $name == 'nav_logo' { 
+    @include mixin_icons(186px, 32px, 0, 0, 1, $bgsw);
+    &.en {}
+    @media #{$m-xs-max} {
+      @include mixin_icons(186px, 32px, 0, 0, 24/32, $bgsw);
+      &.en {}
+    }
+  }
+  // footer
+  @if $name == 'footer_logo' { 
+    @include mixin_icons(186px, 32px, 0, 0, 32/32, $bgsw);
+    @media #{$m-xs-max} {
+      @include mixin_icons(186px, 32px, 0, 0, 24/32, $bgsw);
+    }
+  }
+}
+
+@mixin custom_container {
+  max-width: 1600px + 120px;
+  @media #{$m-sm-min} {
+    padding: 0 60px;
+  }
+  @media #{$m-xs-max} {
+    padding: 0 0px;
+  }
+}
+
+@mixin background($name) {
+  @if $name == 'shroud' {
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    background-image: url(../images/common/bg_shroud.png);
+  }
+}
+
+// -------------------
+// * Font Size
+// -------------------
+@mixin font_size($type) {
+  @if $type == 'xl' {
+    font-size: $font_basic_desktop+15px;
+    @media #{$m-xs-max} {
+      font-size: $font_basic_mobile+8px;
+    }
+  }
+  @if $type == 'h1' {
+    font-size: $font_basic_desktop+8px;
+    @media #{$m-xs-max} {
+      font-size: $font_basic_mobile+8px;
+    }
+  }
+  @if $type == 'h2' {
+    font-size: $font_basic_desktop+6px;
+    @media #{$m-xs-max} {
+      font-size: $font_basic_mobile+6px;
+    }
+  }
+  @if $type == 'h3' {
+    font-size: $font_basic_desktop+4px;
+    @media #{$m-xs-max} {
+      font-size: $font_basic_mobile+4px; 
+    }
+  }
+  @if $type == 'h4' {
+    font-size: $font_basic_desktop+2px;
+    @media #{$m-xs-max} {
+      font-size: $font_basic_mobile+2px; 
+    }
+  }
+  @if $type == 'h5' {}
+  @if $type == 'h6' {}
+  @if $type == 'p' {
+    font-size: $font_basic_desktop;
+    @media #{$m-xs-max} {
+      font-size: $font_basic_mobile; 
+    }
+  }
+}

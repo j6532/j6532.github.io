@@ -1,0 +1,16 @@
+.grid_webWork {
+	$space: 15px;
+	@include clearfix();
+	@include col(0, 0);
+	@include col(xs, 9);
+	@include grid_space($space);
+	.item {
+		@include col(0, 0);
+		@include col(xs, 20%);
+		padding-bottom: $space;
+	}
+	.img {
+		@include bgi_img(1, 1, 100%);
+		background-color: #eee;
+	}
+}

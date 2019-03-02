@@ -1,0 +1,28 @@
+/* Button Cornoer Right Bottom */
+.btn_corner_rbtm {  // p
+  content: '';
+  display:block;
+  position: absolute;
+  right:0;
+  bottom:0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 70px 70px;
+  border-color: transparent transparent $hl transparent;
+  margin: 0;
+  @include transition1s();
+  span {
+    position: absolute;
+    right: 0px;
+    top: 2.5em;
+    @include transform(rotate(-45deg));
+    color: $lightText;
+    width: 50px;
+    font-size: 12px;
+    font-weight: $font_weight_bold;
+  }
+  &:hover {
+    border-color: transparent transparent lighten($hl, 10) transparent;
+  }
+}

@@ -1,0 +1,45 @@
+// /* 2018.10.05 */
+body {
+  font-size:    $font_basic;
+  line-height: 1.5em;
+}
+h1, .h1 {
+  font-size: 32px   * $font_basic * $font_basic / (16px * 16px);
+}
+h2, .h2 {
+  font-size: 30px   * $font_basic * $font_basic / (16px * 16px);
+}
+h3, .h3 {
+  font-size: 1.5    * $font_basic;
+}
+h4, .h4 {
+  font-size: 1.25   * $font_basic;
+}
+h5, .h5 {
+  font-size: 1.125  * $font_basic; 
+}
+h6, .h6 {//fontsize<p
+  font-size: 1      * $font_basic;
+}
+p, .p {
+  font-size: 1      * $font_basic;
+}
+a {
+  // font-size: 1      * $font_basic;
+  font-size: inherit;
+}
+li {
+  font-size: 1      * $font_basic;
+}
+code, kbd, pre, samp {
+  font-size: 1      * $font_basic;
+}
+input,
+textarea,
+select,
+option,
+.btn {
+  font-size: 1      * $font_basic;
+}
+/* Input
+------------ */

@@ -1,0 +1,252 @@
+/* 2018.10.11 */
+$bb_padding:     		$pd_m;
+
+.blocky_container {
+	padding: $bb_padding;
+	> {
+		#{$cols}{
+			padding: $bb_padding;
+		}
+	}
+}
+.blocky {
+	border-radius: 4px;
+	// border: 1px solid $bb_bd;
+	background-color: $bb_bg;
+	border-radius: $radiusNormal;
+	// box-shadow: $sOn;
+	overflow: hidden;
+	&.highlight {
+		border: 2px dotted $hl;
+	}
+	.blocky_body {
+		padding: $bb_padding;
+		@include clearfix();
+		&.article {
+			padding: $bb_padding $bb_padding * 2 $bb_padding * 2;
+		}
+		&.min-medium {
+			min-height: 300px;
+		}
+		// padding
+		&.padding-large {
+			padding: $bb_padding * 2;
+		}
+	}
+	.blocky_footer {
+		padding: $bb_padding*2;
+		text-align: right;
+		border-top: 1px solid $bb_bd;
+		// @include flex-basic(row, space-between,  center);//Justify
+		&.padding-small {
+			padding: $bb_padding;
+		}
+	}
+	
+	.date {
+		margin: 0;
+		line-height: 24px;
+	}
+	.thumb {
+		width: 80px;
+	}
+	.dv_line {
+		position: relative;
+    border-top: 1px solid $bb_bd;
+    &.m-tb {
+    	margin-top: $bb_padding;
+    	margin-bottom: $bb_padding;
+    }
+	}
+}
+/* margin */
+.blocky {
+	margin-bottom: 15px;
+}
+
+/* no border */
+.blocky.no-border {
+	border: 0;
+}
+.blocky {
+	.blocky_body {
+		&.form_table {
+			padding: 0;
+		}
+	}
+}
+/* blocky_header */
+.blocky_header {
+	padding: $bb_padding $bb_padding * 1;
+	// border-radius: $radiusNormal $radiusNormal 0 0;
+	border-bottom: 1px solid $hl_bd;
+	color: $hl_cl;
+	background-color: $hl_bg;
+}
+.blocky_header {
+	border-top: 1px solid $bb_bd;
+	&:nth-child(1) {
+		border-top: 0;
+	}
+}
+/* blocky_header Component */
+.blocky_header { 
+	// for old member page
+	@include clearfix();
+	h1,h2,h3,h4,.title {
+		float: left;
+	}
+	.align-center {
+		width: 100%;
+	}
+	.title ~ .input_simple {
+		margin: -6px 0;
+	} 
+	.title + .input_simple {
+		margin-right: -14px;
+	}
+	.input-daterange {
+		float: right;
+		/////
+		max-width: 300px;
+		margin: -3px 0;
+		margin-right: -5px;
+		@media(max-width: $screen-xxs-max) {
+			width: calc(100% + 8px);
+			max-width: none;
+			margin: 5px -5px -3px;
+		}
+	}
+	.nav-tabs {
+		border-bottom: 0px;
+		margin-bottom: -10px;
+		margin-top: -3px;
+		margin-left: -7px;
+		margin-right: -7px;
+		&.justify {
+			@include flexbox;
+			@include flex-wrap(wrap);
+			li {
+				@include flex(1);
+			}
+		}
+		li {
+			a {
+				color: $hl;
+				background-color: transparent;
+				border: 1px solid $hl;
+				border-bottom-color: transparent;
+				text-align: center;
+				&:hover, &:focus {
+					color: $mainBg;
+					background-color: $hl;
+					border: 1px solid $hl;
+				}
+			}
+			&.active {
+				a {
+					&, &:hover, &:focus {
+						color: $mainBg;
+						background-color: $hl;
+						border: 1px solid $hl;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Block Border Top
+-------------- */
+.blocky {
+	> .blocky_body + .blocky_body {
+		border-top: 1px solid $bb_bd;
+	}
+}
+
+.action_bar {
+	.alert {
+		padding: $bb_padding;
+	}
+	.alert,.btn_action{
+		margin-bottom: $bb_padding;
+		&:nth-last-child(1) {
+			margin: 0;
+		}
+	}
+}
+.nowrap {
+	white-space: nowrap;
+}
+.blocky {
+	.row {
+		margin: 0;
+		> {
+			[class*=col-lg], 
+			[class*=col-md], 
+			[class*=col-sm], 
+			[class*=col-xs] {
+				padding: 0 $bb_padding;
+			}
+		}
+	}
+}
+
+
+
+/* Narrow */
+.blocky {
+	&.narrow .blocky_body, .blocky_body.narrow {
+		// padding: $bb_padding/2;
+	}
+	&.narrow .form_column, .form_column.narrow {
+		> .item {
+			// padding: $bb_padding/2 0;
+		}
+		@media (max-width: 991px) {
+			// padding: 0;
+			> .item {
+				// padding: 0;
+			}
+		}
+	}
+	&.narrow .blocky_footer, .blocky_footer.narrow {
+		padding: $bb_padding/2;
+	}
+}
+
+
+/* Pagination */
+.blocky {
+	.pagination {
+		margin: 0;
+		width: 100%;
+		text-align: center;
+		li {
+			display: inline-block;
+		}
+	}
+}
+
+@import "_stepper";
+@import "_tab";
+@import "formTable/_formTable";
+
+@import "_attach";
+@import "_basicBlockFormColumn";
+@import "_cube";
+
+
+
+/* 
+
+Modify: 
+. basic_container        > . blocky_container
+. basic_block            > . blocky
+. basic_block . header   > . blocky_header
+. basic_block . block    > . blocky_body
+. basic_block . footer   > . blocky_footer
+
+. basic_block_tab        > . blocky_tab
+
+ */

@@ -1,0 +1,73 @@
+
+/* Title */
+.title_main, .title_special {
+  &:empty {
+    display: none !important;
+  }
+}
+.title_main {}
+.title_special {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  z-index: 1;
+  line-height: 1;
+  // padding-bottom: 20px;
+  margin: 10px 0;
+}
+.tt_wr { //title wrapper
+  >.title_special,.title_main {
+    display: inline-block;
+  }
+}
+
+
+
+/* Contact Info List */
+ul.ci_list {
+  padding: 0 15px 10px;
+  padding-left: 0;
+  position: relative;
+  text-align: left;
+  li{
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 5px;
+    @include ci_list();
+    &:before{
+      left: 0;
+      top: 0;
+    }
+  }
+  a {
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Not Use
+-------------- */
+// .article {
+//   h1,h2,h3,h4 {
+//     color: $hl;
+//     margin-top: 20px;
+//   }
+//   .center {
+//     text-align: center;
+//   }
+// }
+// /* Layout */
+// .layout_main {
+//   .col_img {
+//     margin-bottom: 15px;
+//   }
+//   .col_content {
+//     .btn_wrapper {
+//       margin-top: 20px;
+//     }
+//   }
+// }
+// .layout_special {}

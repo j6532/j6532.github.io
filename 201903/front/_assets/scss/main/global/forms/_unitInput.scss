@@ -1,0 +1,23 @@
+/* Unit Input
+------------- */
+
+.unit_input {
+  position: relative;
+  >input {
+    padding-right: 18px;
+  }
+  >span {
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 12px);
+  }
+}
+
+.unit_input_left {
+  position: relative;
+  >span {
+    position: absolute;
+    left: 10px;
+    top: calc(50% - 12px);
+  }
+}

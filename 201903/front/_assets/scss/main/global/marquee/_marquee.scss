@@ -1,0 +1,51 @@
+$mrq_bg:	darken($hl,0);
+$marquee_h: 31px;
+.abgne_marquee_wrapper{
+	position: relative;
+	overflow: hidden;
+	z-index: 2;
+	background-color: rgba($mrq_bg,1);
+}
+#abgne_marquee{
+	height: $marquee_h;
+	position: relative;
+	overflow: hidden;
+	ul {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		li{
+			display: table;
+			height: 100%;
+			text-align: center;
+			width : 100%;
+			color: $mainBg;
+		}
+		.td {
+			display: table-cell;
+			vertical-align: middle;
+			// ----------------
+			// td overflow ellipsis
+			overflow : hidden;
+			text-overflow : ellipsis;
+			white-space : nowrap;
+			max-width: 0;
+			width: 100%;
+			// ----------------
+			padding: 0 12px;
+		}
+	}
+	a{
+		color: inherit;
+		&:hover,&:focus{
+			text-decoration: underline;
+		}
+	}
+	/* RWD */
+	@media #{$m-xs-max} {
+		ul li{
+			// text-align: left;
+			
+		}
+	}
+}

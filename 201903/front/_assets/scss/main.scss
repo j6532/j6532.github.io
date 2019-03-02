@@ -1,0 +1,25 @@
+/* ==========================
+ Variables
+========================== */
+@import "main/global/variables/_variables"; 
+@import "main/theme/base/_variables";
+
+/* ==========================
+ Mixins
+========================== */
+@import "main/theme/mixins/_mixins"; 
+//for Templates
+
+/* ==========================
+ Middle Part
+========================== */
+@import "main/global/_global"; 
+/* theme */
+@import "main/theme/_theme";  
+ 
+/* ==========================
+ Final Part
+========================== */
+/* Custom Classes */
+@import "main/global/customClass/_customClass";   
+

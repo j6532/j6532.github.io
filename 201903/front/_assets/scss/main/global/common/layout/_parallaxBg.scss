@@ -1,0 +1,42 @@
+$pb_h: 800 / 1920 * 1920px;
+$pb_w: 1920px / 2;
+.bg_parallax {
+  background-image: url(../images/common/bg_para_001.png);
+  position: absolute;
+  top: 0;
+  height: 2400px;
+  width: calc(1920px / 2);
+  @include bg-img(1920px*3 2400px);
+  z-index: -2;
+  &:nth-child(1) {
+    background-position: (- $pb_w * 0) top;
+  }
+  &:nth-child(2) {
+    background-position: (- $pb_w * 1) top;
+  }
+  &:nth-child(3) {
+    background-position: (- $pb_w * 2) top;
+  }
+  &:nth-child(4) {
+    background-position: (- $pb_w * 3) top;
+  }
+  &:nth-child(5) {
+    background-position: (- $pb_w * 4) top;
+  }
+  &:nth-child(6) {
+    background-position: (- $pb_w * 5) top;
+  }
+  &:nth-child(1),&:nth-child(3),&:nth-child(5) {
+    left: 0;
+  } 
+  &:nth-child(2),&:nth-child(4),&:nth-child(6) {
+    right: 0;
+  }  
+  @media(max-width: $screen-xs-max) {
+    display: none;
+  }
+}
+.bg_prlx_wrp {
+  position: relative;
+  overflow: hidden;
+}

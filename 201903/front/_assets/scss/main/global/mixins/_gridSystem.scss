@@ -1,0 +1,183 @@
+@mixin container($type) {
+  position: relative;
+  @include clearfix();
+  @if $type == container {
+    max-width: 1200px;
+    // max-width: 1400px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @if $type == fluid {
+    width: 100%;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+
+
+@mixin col($media, $width) {
+  $is_grid: $width == 1 or 
+            $width == 2 or 
+            $width == 3 or 
+            $width == 4 or 
+            $width == 5 or 
+            $width == 6 or 
+            $width == 7 or 
+            $width == 8 or 
+            $width == 9 or 
+            $width == 10 or 
+            $width == 11 or 
+            $width == 12;
+  @if $media == 0 and $media == 0 {
+    float: left;
+  }
+  @if $media == xs {
+    @if $is_grid {
+      @for $i from 1 through 12 {
+        @if $width == $i {
+          width: 100%*$i/12;
+        }
+      }
+    } @else {
+      width: #{$width};
+    }
+    
+  } @else if $media == xxs {
+    @media #{$m-xxs-max} {
+      @if $is_grid {
+        @for $i from 1 through 12 {
+          @if $width == $i {
+            width: 100%*$i/12;
+          }
+        }
+      } @else {
+        width: #{$width};
+      }
+    }
+  } @else if $media == sm {
+    @media #{$m-sm-min} {
+      @if $is_grid {
+        @for $i from 1 through 12 {
+          @if $width == $i {
+            width: 100%*$i/12;
+          }
+        }
+      } @else {
+        width: #{$width};
+      }
+    }
+  } @else if $media == md {
+    @media #{$m-md-min} {
+      @if $is_grid {
+        @for $i from 1 through 12 {
+          @if $width == $i {
+            width: 100%*$i/12;
+          }
+        }
+      } @else {
+        width: #{$width};
+      }
+    }
+  } @else if $media == lg {
+    @media #{$m-lg-min} {
+      @if $is_grid {
+        @for $i from 1 through 12 {
+          @if $width == $i {
+            width: 100%*$i/12;
+          }
+        }
+      } @else {
+        width: #{$width};
+      }
+    }
+  } 
+}
+
+// @mixin col_all_media($xxs, $xs, $sm, $md, $lg) {
+//   @for $i from 1 through 12 {
+//     @if $xs == $i {
+//       width: 100%*$i/12;
+//     }
+//   }
+//   @for $i from 1 through 12 {
+//     @if $xxs == $i {
+//       @media #{$m-xxs-max} {
+//         width: 100%*$i/12;
+//       }
+//     }
+//   }
+//   @for $i from 1 through 12 {
+//     @if $sm == $i {
+//       @media #{$m-sm-min} {
+//         width: 100%*$i/12;
+//       }
+//     }
+//   }
+//   @for $i from 1 through 12 {
+//     @if $md == $i {
+//       @media #{$m-md-min} {
+//         width: 100%*$i/12;
+//       }
+//     }
+//   }
+//   @for $i from 1 through 12 {
+//     @if $lg == $i {
+//       @media #{$m-lg-min} {
+//         width: 100%*$i/12;
+//       }
+//     }
+//   }
+// }
+
+// -------------------
+// Center Col
+// -------------------
+@mixin center_col($media) {
+  &:after,&:before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  @if $media == all {
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  @each $media_name, $media_query in  
+    (xxs, $m-xxs),
+    (xxs-max, $m-xxs-max),
+    (xs, $m-xs),
+    (xs-min, $m-xs-min),
+    (xs-max, $m-xs-max),
+    (sm, $m-sm),
+    (sm-min, $m-sm-min),
+    (sm-max, $m-sm-max),
+    (md, $m-md),
+    (md-min, $m-md-min),
+    (md-max, $m-md-max),
+    (lg, $m-lg),
+    (lg-min, $m-lg-min) {
+    @if $media == $media_name {
+      @media #{$media_query} {
+        & {
+          @include clearfix();
+          float: none !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+      }
+    }
+  }
+
+}
+// -------------------
+// Grid Spaces
+// -------------------
+@mixin grid_space($space) {
+  margin-right: $space * -1;
+  .item {
+    padding-right: $space;
+  }
+}

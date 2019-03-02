@@ -1,0 +1,73 @@
+
+/* Contact
+-------------- */
+.c_left,
+.c_right {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.c_left {
+  padding-bottom: 20px;
+}
+
+/* Contact Map
+-------------- */
+.c_map {
+  height: 230px;
+}
+
+/* Contact Info
+----------- */
+ul.c_info {
+  // padding: 10px 15px;
+  padding: 0px 0;
+  padding-bottom: 20px;
+  position: relative;
+  text-align: left;
+  // border-bottom: 1px solid $mainBorder;
+  // background-color: rgba($lightBorder,0.5);
+  li{
+    @include ci_list();
+    display: block;
+    position: relative;
+    padding: 10px 40px;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    &:before{
+      left: 5px;
+      top: 10px;
+      // color: $hl;
+    }
+  }
+  li + li {
+    border-top: 1px solid $lightBorder;
+  }
+}
+/* QR Code
+----------------- */
+.c_qrcode_wrapper {
+  position: relative;
+  padding: 15px;
+  border: 1px solid #e1e1e1;
+  max-width: 200px;
+  margin: 10px auto 30px;
+}
+.img_qrcode {
+  @include bgi_img(1, 1, 100%);
+}
+
+/* Contact Form
+----------------- */
+.c_form_wrapper {
+  .form_column {
+    
+  }
+  .btn_wrapper {
+    padding-right: 0;
+    padding-left: 0;
+    @media #{$m-xs-min} {
+      margin-top: 30px !important;
+
+    }
+  }
+}

@@ -1,0 +1,48 @@
+// =========================== 
+// Default Font Style
+// ===========================
+body {
+	line-height: 1.5em;
+}
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	text-transform: unset;
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	line-height: 1.5em;
+	// line-height: 1.1;
+	font-weight: $font_weight_normal;
+	letter-spacing: 1px;
+	text-transform: none;
+}
+h1, .h1,
+h2, .h2 {
+	font-weight: $font_weight_bold;
+	@media #{$m-xs-max} {
+		font-weight: $font_weight_medium;
+	}
+}
+p, .p {
+	margin: 0em 0;
+	line-height: 1.8em;
+}
+code, kbd, pre, samp{
+	font-family: inherit;
+}
+
+/* Desktop Font Size
+--------------------- */
+$font_basic:    $font_basic_desktop;
+@import "_fontSize";
+
+/* Mobile Font Size
+--------------------- */
+@media (max-width: 767px) {
+	$font_basic: 	$font_basic_mobile;
+	@import "_fontSize";
+}

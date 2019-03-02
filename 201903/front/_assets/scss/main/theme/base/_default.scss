@@ -1,0 +1,41 @@
+@charset "utf-8";
+body {
+	font-family: 	$main-font;
+}
+
+a{
+	color: $mainText;
+}
+a:hover,
+a:focus {
+	color: $mainText;
+}
+
+select,
+input,
+textarea {
+  &:focus {
+    border: 1px solid rgba($hl,0.5);
+  }
+}
+
+$select_bg:		#eee;
+$select_txt:	$hl;
+::selection {
+	color: $select_txt;
+	background: $select_bg;
+}
+::-moz-selection {
+	color: $select_txt;
+	background: $select_bg;
+}
+
+
+
+// scrollbar
+// ----------
+$scr_cl:  rgba(#999,1);
+
+::-webkit-scrollbar-thumb {//dragging bar
+  background: $scr_cl;
+}

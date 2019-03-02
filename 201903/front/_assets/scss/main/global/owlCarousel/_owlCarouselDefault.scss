@@ -1,0 +1,27 @@
+
+.owl-carousel {
+  .owl-item {
+    &:hover {
+      z-index: 2;
+    }
+  }
+  .content {
+    display: block;
+    text-align: left;
+    position: relative;
+  }
+  @include owl-dots;
+  @include owl-nav-basic($radius:50px,$distance:10px);
+  .owl-dots {
+    position: absolute;
+  }
+}
+.big-images {
+  margin-bottom: 4px;
+}
+
+/* Row Wrapper
+------------------- */
+.row_wrapper {
+	overflow: hidden;
+}

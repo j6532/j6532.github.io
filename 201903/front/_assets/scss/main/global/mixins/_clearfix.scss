@@ -1,0 +1,121 @@
+// ----------------- 
+// Clearfix, Grid Clearfix 
+// -----------------
+
+// clearfix
+@mixin clearfix {
+  &:after,&:before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+
+// -------------------
+// ** Every Media Need Define Width
+//    ex. xxs ~ md (xxs, xs, sm, md)
+// -------------------
+@mixin grid_clearfix {  //parent: .grid_ .item
+  @media #{$m-xxs-max}{
+    &.col-xxs-6:nth-child(2n + 1) {
+      clear: left;
+    }
+    &.col-xxs-4:nth-child(3n + 1) {
+      clear: left;
+    }
+    &.col-xxs-3:nth-child(4n + 1) {
+      clear: left;
+    }
+    &.col-xxs-2:nth-child(6n + 1) {
+      clear: left;
+    }
+  }
+  @media #{$m-xs} {
+    &.col-xs-6:nth-child(2n + 1) {
+      clear: left;
+    }
+    &.col-xs-4:nth-child(3n + 1) {
+      clear: left;
+    }
+    &.col-xs-3:nth-child(4n + 1) {
+      clear: left;
+    }
+    &.col-xs-2:nth-child(6n + 1) {
+      clear: left;
+    }
+  }
+  @media #{$m-sm} {
+    &.col-sm-6:nth-child(2n + 1) {
+      clear: left;
+    }
+    &.col-sm-4:nth-child(3n + 1) {
+      clear: left;
+    }
+    &.col-sm-3:nth-child(4n + 1) {
+      clear: left;
+    }
+    &.col-sm-2:nth-child(6n + 1) {
+      clear: left;
+    }
+  }
+  @media #{$m-md-min} {
+    &.col-md-6:nth-child(2n + 1) {
+      clear: left;
+    }
+    &.col-md-4:nth-child(3n + 1) {
+      clear: left;
+    }
+    &.col-md-3:nth-child(4n + 1) {
+      clear: left;
+    }
+    &.col-md-2:nth-child(6n + 1) {
+      clear: left;
+    }
+  }
+}
+//parent: .grid_ .item
+@mixin col_clearfix($media, $width) { 
+  $cols: 2, 3, 4, 6;
+  @if $media == xxs {
+    @media #{$m-xxs} {
+      @each $n in $cols {
+        @if $width == $n {
+          &:nth-child(#{12 / $n}n+1) {
+            clear: left;
+          }
+        }
+      }
+    } 
+  } @else if $media == xs {
+    @media #{$m-xs} {
+      @each $n in $cols {
+        @if $width == $n {
+          &:nth-child(#{12 / $n}n+1) {
+            clear: left;
+          }
+        }
+      }
+    }
+  } @else if $media == sm {
+    @media #{$m-sm} {
+      @each $n in $cols {
+        @if $width == $n {
+          &:nth-child(#{12 / $n}n+1) {
+            clear: left;
+          }
+        }
+      }
+    }
+  } @else if $media == md {
+    @media #{$m-md-min} {
+      @each $n in $cols {
+        @if $width == $n {
+          &:nth-child(#{12 / $n}n+1) {
+            clear: left;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+/* 
+inline input (maybe filter bar)
+------------------ */
+
+.input_inline { //&.ul
+  @include clearfix();
+  li {
+    display: inline-block;
+    margin: 2px 0;
+    padding-left: 8px;
+    vertical-align: middle;
+    > .input_label,
+    > .search_group {
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+  // RWD
+  // -------------
+  &.xxs-responsive {
+    @media #{$m-xxs-max} {
+      li {
+        display: block;
+        @include clearfix();
+        > .input_label {
+          width: 80px;
+          text-align: right;
+          padding-right: 8px;
+          margin-top: calc(1em);
+        }
+        > input,
+        > textarea,
+        > .caret_select,
+        > .search_group {
+          width: calc(100% - 80px - 5px);
+          float: right;
+        }
+        // Select
+        .caret_select select {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,31 @@
+.notfound {
+  display: table-cell;
+  width:  100vw;
+  height: calc(100vh - 100px);
+  text-align: center;
+  vertical-align: middle;
+  // font-family: 'Julius Sans One','Microsoft Jhenghei', sans-serif;
+  font-family: 'El Messiri','Microsoft Jhenghei', sans-serif;
+}
+.notfound_title, .notfound_dsc, .notfound_btn {
+  display: inline-block;
+}
+.notfound_title {
+  font-size: 80px;
+  font-weight: 400;
+}
+.notfound_dsc {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.notfound_btn {
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .notfound_title {
+    font-size: 60px;
+  }
+  .notfound_dsc {
+    font-size: 14px;
+  }
+}

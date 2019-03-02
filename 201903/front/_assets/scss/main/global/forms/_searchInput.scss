@@ -1,0 +1,19 @@
+/* Search Group
+-------------- */
+.search_group {
+  @include clearfix();
+  > input, > button {
+    float: left;
+  }
+  > input {
+    width: calc(100% - 50px);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; 
+  }
+  > button {
+    width: 51px; 
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+  }
+}

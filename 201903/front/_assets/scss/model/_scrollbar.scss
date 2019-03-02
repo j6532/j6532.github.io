@@ -1,0 +1,21 @@
+// scrollbar
+// ----------
+$scr_cl:  rgba(#333,0.5);
+$scr_bg:  #ccc;
+$scr_w:   6px;
+::-webkit-scrollbar {//whole scrollbar
+  width: $scr_w;
+  height: $scr_w;
+  background-color: $scr_bg;
+}
+::-webkit-scrollbar-track {//track
+  background-color: $scr_bg;
+  // border-left: 1px solid $scr_cl;
+}
+::-webkit-scrollbar-thumb {//dragging bar
+  background: $scr_cl;
+  // border-color: $white;
+  // border-style: solid;
+  // border-width: 0 2px 0 1px;
+}
+// ::-webkit-scrollbar-thumb:window-inactive {}

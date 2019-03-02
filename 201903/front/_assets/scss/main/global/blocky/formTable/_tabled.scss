@@ -1,0 +1,70 @@
+/* Desktop */
+/* 2018.10.04 */
+// parent: table
+th,td {
+  border-bottom: 1px solid $bb_bd;
+  @for $i from 1 through 9 {
+    &.w-#{$i} {
+      width: 10% * $i;
+    }
+  }
+  @for $i from 1 through 5 {
+    &.w-f-#{$i} {
+      width: 45px * $i;
+    }
+  }
+}
+tbody {
+  tr {
+    &:nth-last-child(1) {
+      th,td {
+        border-bottom: 0px;
+      }
+    }
+  }
+}
+thead ,tfoot{
+  th,td {
+    background-color: $bbt_th_bg;
+    border-style: solid;
+    border-color: $bb_bd;
+    border-width: 0;
+    margin: 0;
+  }
+}
+thead{
+  th,td {
+    border-bottom-width: 1px;
+  }
+}
+tfoot {
+  th,td {
+     border-top-width: 1px;
+  }
+}
+tbody, tfoot, thead, tr {
+  vertical-align: middle;
+}
+/* Vertical Align
+----------------- */
+@each $align in (middle, top, bottom) {
+  &.vertical-#{$align} {
+    th, td {
+    vertical-align: $align;
+    }
+  }
+}
+
+/* Eliminate Bottom Line When ROWSPAN (simple rowspan)
+------------- */
+@for $i from 2 through 20 {
+  tr:nth-last-child(#{$i}) {
+    td, th {
+      &[rowspan="#{$i}"] {
+        border-bottom: 0;
+      } 
+    }
+  }
+}
+
+// 

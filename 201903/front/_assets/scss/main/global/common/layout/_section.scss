@@ -1,0 +1,14 @@
+body {
+  padding-top: 1px;
+  margin-top: -1px;
+  position: relative;
+  //Fix Datepicker
+}
+.section_main {
+  $spacing:       30px;
+  padding:        $spacing 0;
+  @media #{$m-xs-max} {
+    $spacing:       20px;
+    padding:        $spacing 0;
+  }
+}

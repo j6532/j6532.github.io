@@ -1,0 +1,12 @@
+// * Language Font
+// -------------------
+
+@mixin lang-2nd-alt {
+  font-family: $alt-font;
+  font-weight: $font_weight_medium;
+  @at-root{
+    .lang-2nd #{&} {
+      font-family: $lagn2-alt-font;
+    }
+  }
+}

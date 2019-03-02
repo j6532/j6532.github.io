@@ -1,0 +1,266 @@
+// ===========================
+// Fonts
+// ===========================
+
+/* Microsoft Jhenghei 400, 700 */
+
+$main-font:       'Microsoft Jhenghei', sans-serif;
+$alt-font:        'Microsoft Jhenghei', sans-serif;
+$lagn2-main-font: 'Microsoft Jhenghei', sans-serif;
+$lagn2-alt-font:  'Microsoft Jhenghei', sans-serif;
+
+// Color
+$b:             #000; //Black
+$black:         $b;
+$g:             #333; //Gray
+$gray:          $g;
+$f:             #fff; //White
+$white:         #fff;
+
+$hl:            #50c; //Highlight
+$hl2nd:         #7F35C9;
+$hl3rd:         #7F35C9;
+$hl4th:         #561d1d;
+$hlDarken:      darken($hl, 20%);
+
+$white:  #fff !default;
+$black:  #000 !default;
+$red:    #f56954 !default;
+$orange: #f0ad4e !default;
+$yellow: #ffd500 !default;
+$green:  #5cb85c !default;
+$blue:   #0275d8 !default;
+$teal:   #5bc0de !default;
+$pink:   #ff5b77 !default;
+$purple: #613d7c !default;
+
+$primary:             $blue !default;
+$success:             $green !default;
+$info:                $teal !default;
+$warning:             $orange !default;
+$danger:              $red !default;
+
+$link:          $blue;
+$linkHighlight: $blue;
+
+// Text
+$mainText:      #4d4d4d; //Text
+$lightText:     #999;
+$exLightText:   #ccc;
+
+// Wrong(Fixing)
+$exlightText:   $exLightText;
+
+// Border
+$mainBorder:    #dfdfdf;
+$lightBorder:   #e6e6e6;
+$exLightBorder: #f1f1f1;
+$secondBorder:  #f8e9ca;
+
+// Background
+$mainBg:        #fff; //Background
+$lightBg:       #f1f1f1;
+$exLightBg:     #f9f9f9;
+$secondBg:      #ddd;
+$thirdBg:       #fff8f3;
+$strongBg:      #edc119;
+
+/// Shadow
+$sOn:       0 1px 3px rgba(0,0,0,0.2);
+$sOver:     0 2px 6px rgba(0,0,0,0.3);
+$sHigh:     0 3px 10px rgba(0,0,0,0.3);
+$sRoof:     0 4px 16px rgba(0,0,0,0.2);
+$sSky:      0 4px 20px rgba(0,0,0,0.2);
+
+// =========================== 
+// Section Padding
+// ===========================
+$pd_xs: 2px;
+$pd_s:  4px;
+$pd_m:  8px;
+$pd_l:  16px;
+
+// =========================== 
+// Blocky
+// ===========================
+$hl_bg:             rgba($hl,0.15);
+$hl_bd:             rgba($hl,1);
+$hl_cl:             $hl;
+$bb_bg:             $exLightBg;
+$bb_bd:             $lightBorder;
+$bb_hd_sec_bg:      lighten($exLightBg,1);
+$bbt_th_bg:         $bb_hd_sec_bg;
+/* tab */
+$bbt_radius:        4px;
+$bbt_bg:            $lightBg;
+/* Column */
+$fc_pd:             4px;
+$fc_txt_size:       14px;
+$fc_bdc:            $lightBorder;
+
+// =========================== 
+// Stepper
+// ===========================
+$st_bg:         $bb_bg;
+$st_bd:         rgba($white,0.2);
+$st_color:      $hl;
+$st_tx_cl:      $mainText;
+$st_act_bg:     #f7e5e0;
+$st_act_st_cl:  $mainText;
+$st_act_tx_cl:  $mainText;
+
+// =========================== 
+// Parchment
+// ===========================
+$pc_main_bdc:       $mainBorder;
+
+// =========================== 
+// List Second
+// ===========================
+$ls_bgc_fir: $thirdBg;
+$ls_bgc_sec: white;
+$ls_bdc_fir: $mainBorder;
+
+
+// =========================== 
+// Tag
+// ===========================
+
+$tag_font_color:     #fff;
+
+$tag_default:     rgba($hl2nd,0.8);
+$tag_success:     rgba($success,0.65);
+$tag_info:        darken(rgba($info,0.65),5%);
+$tag_warning:     darken(rgba($warning,0.65),10%);
+$tag_danger:      darken(rgba($danger,0.6),10%);
+$tag_disabled:    rgba(lighten(black,50),0.6);
+
+// ----------------- 
+// Media queries breakpoints
+// According to Bootstrap v3.3.7 
+// - Extra small screen Size Changed. 
+// ----------------- 
+
+// Extra small screen / phone
+$screen-xs:                  576px !default;
+$screen-xs-min:              $screen-xs !default;
+
+// Small screen / tablet
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+
+// Medium screen / desktop
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+
+// Extra Large screen / wide desktop
+$screen-xl:                  1900px !default;
+$screen-xl-min:              $screen-xl !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xxs-max:             ($screen-xs-min - 1) !default;
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+$screen-lg-max:              ($screen-xl-min - 1) !default;
+
+$m-xxs: "(max-width:" $screen-xxs-max ")";  
+$m-xs:  "(min-width:" $screen-xs-min ")and(max-width:" $screen-xs-max ")"; 
+$m-sm:  "(min-width:" $screen-sm-min ")and(max-width:" $screen-sm-max ")"; 
+$m-md:  "(min-width:" $screen-md-min ")and(max-width:" $screen-md-max ")"; 
+$m-lg:  "(min-width:" $screen-lg-min ")and(max-width:" $screen-lg-max ")"; 
+$m-xl:  "(min-width:" $screen-xl-min ")"; 
+
+$m-xxs-max: "(max-width:" $screen-xxs-max ")";
+$m-xs-max:  "(max-width:" $screen-xs-max ")";
+$m-sm-max:  "(max-width:" $screen-sm-max ")";
+$m-md-max:  "(max-width:" $screen-md-max ")";
+$m-lg-max:  "(max-width:" $screen-lg-max ")";
+
+$m-xs-min:  "(min-width:" $screen-xs-min ")";
+$m-sm-min:  "(min-width:" $screen-sm-min ")";
+$m-md-min:  "(min-width:" $screen-md-min ")";
+$m-lg-min:  "(min-width:" $screen-lg-min ")";
+$m-xl-min:  "(min-width:" $screen-xl-min ")";
+
+
+$m-touch-max:  "(max-width: 1439px)";
+$m-mouse-min:  "(min-width: 1440px)";
+
+
+$m-ratio-xl: "1600/800";  // wider
+$m-ratio-lg: "1600/850";
+$m-ratio-md: "1/1";
+$m-ratio-sm: "850/1600";
+$m-ratio-xs: "800/1600";  // narrower
+
+// wider
+$m-ratio-xl-min: "(min-aspect-ratio: " $m-ratio-xl ")";
+$m-ratio-lg-min: "(min-aspect-ratio: " $m-ratio-lg ")";
+$m-ratio-md-min: "(min-aspect-ratio: " $m-ratio-md ")";
+$m-ratio-sm-min: "(min-aspect-ratio: " $m-ratio-sm ")";
+$m-ratio-xs-min: "(min-aspect-ratio: " $m-ratio-xs ")";
+
+// narrower
+$m-ratio-xl-max: "(max-aspect-ratio: " $m-ratio-xl ")";
+$m-ratio-lg-max: "(max-aspect-ratio: " $m-ratio-lg ")";
+$m-ratio-md-max: "(max-aspect-ratio: " $m-ratio-md ")";
+$m-ratio-sm-max: "(max-aspect-ratio: " $m-ratio-sm ")";
+$m-ratio-xs-max: "(max-aspect-ratio: " $m-ratio-xs ")";
+
+$m-ratio-square-min:    "(min-aspect-ratio: 1/1)"; // wider
+$m-ratio-square-max:    "(max-aspect-ratio: 1/1)"; // narrower
+
+   
+//                  phone           desktop
+//                  |       tablet  |       w desktop
+//                  |       |       |       |   
+//          xxs     xs      sm      md      lg        xl
+// --------------------------------------------------
+//  max  |  575     767     991     1199    1899      x     
+//  min  |  x       576     768     992     1200      1900
+
+// * Not Use
+// ------------------
+// $screen-phone:               $screen-xs-min !default;
+// $screen-tablet:              $screen-sm-min !default;
+// $screen-desktop:             $screen-md-min !default;
+// $screen-lg-desktop:          $screen-lg-min !default;
+
+// ----------------- 
+// Cols
+// ----------------- 
+$cols:   '[class*=col-lg], [class*=col-md], [class*=col-sm], [class*=col-xs]';
+
+ 
+ 
+
+
+// ----------------- 
+// Font Size
+// ----------------- 
+$font_basic_desktop:  16px;
+$font_basic_mobile:   14px;
+
+// ----------------- 
+// Font Weight
+// ----------------- 
+$font_weight_normal:  400;
+$font_weight_medium:  500;
+$font_weight_bold:    700;
+
+// ----------------- 
+// Not Use
+// ----------------- 
+
+// // ----------------- 
+// // Radius
+// // ----------------- 
+$radiusNormal:              4px;
+$radiusLarge:               12px;
+$radiusLittle:              2px;
+$radiusCircle:              100px;

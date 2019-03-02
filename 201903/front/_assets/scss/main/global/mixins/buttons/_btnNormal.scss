@@ -1,0 +1,43 @@
+@mixin btn_normal($type: none) {
+  line-height:1em;
+  padding: 14px 20px;
+  border-radius: 4px;
+  // box-shadow: $sOver;
+  background-color: $hl;
+  color: white;
+  display:inline-block;
+  border: 1px solid transparent;
+  @include transition1s;
+  @if $type == outline {
+    background-color: transparent;
+    border: 1px solid $hl;
+    color: $hl;
+    &:hover {
+      background-color: rgba($hl,0.1);
+    }
+  } @else { 
+    
+  }
+  &:hover, &:focus {
+    color: white;
+    // box-shadow: $sOn;
+    background-color: darken($hl, 5%);
+  }
+  &.large {
+    font-size: 20px;
+    padding: 18px 24px;
+  }
+  // &.outline {
+    
+  // }
+  &.radius {
+    border-radius: 30px;
+  }
+  // color
+  &.reverse {
+    background-color: white;
+    color: $hl;
+  }
+  
+  
+}

@@ -1,0 +1,41 @@
+.tab {
+  @include clearfix();
+  >li {
+    float: left;
+    display: block;
+  }
+  // .active
+  // ----------
+  >li.active {
+    a {
+      background-color: #eee;
+    }
+  }
+  a {
+    display: block;
+    line-height: 1em;
+    // padding: 6px;
+  }
+  // RWD
+  // -----------
+  $auto-width: false;
+  @if $auto-width == true {
+    @media #{$m-xs-max} {
+      padding: 4px;
+      li {
+        padding: 1px;
+        width: calc(100% / 3);
+      }
+      a {
+        @include shorten_p(1, 1);
+        text-align: center;
+      }
+    }
+    @media #{$m-xxs-max} {
+      li {
+        width: calc(100% / 2);
+      }
+    }
+  }
+  
+}

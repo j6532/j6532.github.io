@@ -1,0 +1,41 @@
+// /* 2018.10.01 */
+@mixin ci_list() { // parent: li
+  padding-left: 32px;
+  line-height: 1.5em;
+  &:before{
+    content: '\f105';
+    font-family: 'FontAwesome';
+    position: absolute;
+    color: inherit;
+    font-size: 1em;
+    line-height: inherit;
+    width: 1.5em;
+    text-align: center;
+    left: 0;
+  }
+  $icon1: "f041";
+  @each $name, $num in  
+    ('map-marker',    icon("f041")),
+    ('phone',         icon("f095")),
+    ('mobile-phone',  icon("f10b")),
+    ('fax',           icon("f1ac")),
+    ('envelope',      icon("f003")),
+    ('link',          icon("f0c1")),
+    ('calendar',      icon("f274")) {
+    &.#{$name}:before {
+      content: #{$num};
+      background-image: none;
+    }
+  }
+  &.line:before {
+    content: '';
+    background-image: url(../images/common/ic_social_line_green.svg);
+    width:  1.5em;
+    height: 1.5em;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &:empty {
+    display: none;
+  }
+}

@@ -1,0 +1,32 @@
+/* Datepicker Range */
+.input-daterange {
+  float: right;
+  width: 100%;
+  /////
+  max-width: 300px;
+  margin: 2px;
+  .form-control, .input-group-addon, .btn {
+    float: left;
+  }
+  .input-group-addon {
+    width: 40px;
+    border-width: 1px;
+    margin: 0 -1px;
+  } 
+  .btn {
+    width: 60px;
+    height: 30px;
+    padding: 2px;
+    border-radius: 0 2px 2px 0;
+  }
+  .form-control {
+    width: calc( (100% - 40px - 60px)/2) !important;
+    padding: 0;
+    &:nth-last-child(2) {
+      border-radius: 0;
+    }
+  }
+  @media(max-width: $screen-xs-max) {
+    max-width: 280px;
+  }
+}

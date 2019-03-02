@@ -1,0 +1,52 @@
+// Not Use , whriting to input_row
+// input_simple and input_row are the same use
+// 
+
+// input_simple
+// ------------------------
+.input_simple {
+  position: relative;
+  padding: 1px !important; //against section_main
+  // @include form_in_parent;
+  > label {
+    height: 24px;
+    width: 100%;
+    &:only-child {
+      margin-top: 8px;
+    }
+    .lock {
+      color: #539c49;
+      font-size: 12px;
+      font-weight: $font_weight_normal;
+    }
+  }
+  > label , > p {
+    margin: 4px 0;
+  }
+  &.closet {
+    padding: 0 !important;
+    // > .input_simple {
+    //   padding-top: 0;
+    // }
+  }
+  &.inline {
+    padding: 6px 0 !important;
+    > label, > input, >p {
+      float: left;
+      margin: 0;
+    }
+    > label {
+      width: 80px;
+      height: unset;
+    }
+    > input, > p {
+      width: calc(100% - 80px);
+      padding-left: 8px;
+    }
+    @include clearfix();
+  }
+  &.notation {
+    padding-top: 10px;
+  }
+  
+}

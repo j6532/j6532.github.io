@@ -1,0 +1,3 @@
+@function icon($character){ // Fix '\' Output to '\\'
+    @return unquote("\"") + unquote(str-insert($character,"\\", 1)) + unquote("\"");
+}

@@ -1,0 +1,75 @@
+/* 2018.10.09 */
+input,
+textarea,
+select {
+  display: inline-block;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  resize: vertical;
+  max-width: 100%;
+  border: 1px solid $mainBorder;
+  @media(max-width: $screen-xs-max) {
+    height: calc(1.8em + 20px);
+  }
+}
+
+input,
+textarea,
+select,
+.btn-input,
+.input-group .btn {
+  padding: 6px 8px;
+  margin: 0px 0;
+  border-radius: 2px;
+  line-height: 1.5em;
+  height: calc(1.5em + 12px);
+  @media(max-width: $screen-xs-max) {
+    padding: 10px 8px;
+    height: calc(1.8em + 20px);
+  }
+}
+select {
+  background-color: white;
+}
+
+option {
+  color: $mainText;
+  background-color: white;
+  border-width: 1px;
+}
+
+input,
+textarea,
+select {
+  &:focus {
+    border: 1px solid rgba($hl,0.5);
+    outline: none;
+  }
+}
+
+textarea {
+  height: unset;
+}
+
+/* Placeholder
+------------------------ */
+$placeholder:   #bbb;
+::-webkit-input-placeholder {
+  color: $placeholder;
+  text-overflow: ellipsis;
+}
+:-moz-placeholder {
+  color: $placeholder !important;
+  text-overflow: ellipsis;
+  opacity: 1;
+}
+::-moz-placeholder {
+  color: $placeholder !important;
+  text-overflow: ellipsis;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: $placeholder !important;
+  text-overflow: ellipsis;
+  opacity: 1;
+}

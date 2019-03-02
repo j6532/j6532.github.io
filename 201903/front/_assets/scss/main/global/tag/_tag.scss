@@ -1,0 +1,66 @@
+/* tag */
+
+.tag {
+  display: inline-block;
+  padding: 5px;
+  margin: 2px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1;
+  border-radius: 4px;
+  border: 1px;
+  border-style: solid;
+  color: $tag_font_color !important;
+  text-align: center;
+  white-space: nowrap;
+  text-indent: 0;
+  @include transition0s();
+  @each $name, $color in 
+  (''         , $tag_default),
+  ('.success' , $tag_success),
+  ('.info'    , $tag_info),
+  ('.warning' , $tag_warning),
+  ('.danger'  , $tag_danger),
+  ('[disabled=true]', $tag_disabled),
+  ('.disabled', $tag_disabled) {
+    &#{$name} {
+      border-color: $color;
+      background-color: $color;
+    }
+  }
+  &.outline.white {
+    border-color: white;
+    background-color: transparent;
+    color: white;
+  }
+}
+a.tag,button.tag {
+  &:hover {
+    opacity: 0.6;
+    color: $tag_font_color;
+  }
+}
+.tag_icon {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  display: inline-block;
+  padding-right: 8px;
+  text-align: left;
+  color: $lightText;
+  &:before {
+    content: '\f02b';
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    color: $hl;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;    
+    padding-right: 8px;
+  }
+  &:hover {
+    text-decoration: underline;
+    color: $lightText;
+  }
+}

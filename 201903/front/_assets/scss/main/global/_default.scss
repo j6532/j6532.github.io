@@ -1,0 +1,93 @@
+@charset "utf-8";
+body {
+	-webkit-font-smoothing: antialiased;
+	color: $mainText;
+	font-family: 	$main-font;
+	&.lang-2nd {
+		font-family: $lagn2-main-font;
+	}
+}
+button{
+	line-height: 1em;
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+}
+button:hover,
+button:active,
+button:focus{
+	outline: unset;
+}
+img {
+	-webkit-backface-visibility: hidden;
+	max-width: 100%;
+	height: auto;
+}
+// video {
+// 	background-size: mask;
+// 	display: table-cell;
+// 	vertical-align: middle;
+// 	width: 100%;
+// }
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+input[type="submit"] {
+	width: auto
+}
+input[type="button"],
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"],
+textarea,
+input[type="submit"] {
+	-webkit-appearance: none;
+}
+
+select::-ms-expand {   //remove IE arrow
+	display: none;
+}
+iframe {
+	border: 0;
+}
+.sound iframe {
+	width: 100%
+}
+
+a,a:before,a:after,
+a *,a *:before,a *:after{
+	@include transition1s();
+}
+
+/* Highlight
+------------------------ */
+$select_bg:		rgba(#000,.05);
+$select_txt:	$hl;
+::selection {
+	color: $select_txt;
+	background: $select_bg;
+}
+::-moz-selection {
+	color: $select_txt;
+	background: $select_bg;
+}
+
+// Unused 
+// -----------------------
+// input[type="submit"]:focus {
+// 	border: none !important
+// }
+// ul {
+// 	list-style: none outside none;
+// }
+// ul,
+// ol,
+// dl {
+// 	list-style-position: outside;
+// }
+// label {
+// 	margin: 0;
+// }

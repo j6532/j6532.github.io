@@ -1,0 +1,36 @@
+/* Tab */
+
+.blocky_tab {
+  a {
+    padding: 10px 15px;
+    border-radius: $bbt_radius $bbt_radius 0 0;
+    color: $mainText;
+    background-color: transparent;
+  }
+
+  // Hover & Active
+  // -----------------
+  a:hover{
+    background-color: darken($bbt_bg,5);
+  }
+  > li.active a{
+    background-color: $hl;
+    color: white;
+  }
+
+  // RWD
+  // -----------------
+  @media #{$m-sm-min} {
+    border-bottom: 2px solid $hl;
+    background-color: $bbt_bg;
+    border-radius: $bbt_radius $bbt_radius 0 0;
+  }
+  @media #{$m-xs-max} {
+    border-bottom: 2px solid $hl;
+    a {
+      padding: 10px;
+      border-radius: $bbt_radius;
+      background-color: $bbt_bg;
+    }
+  }
+}

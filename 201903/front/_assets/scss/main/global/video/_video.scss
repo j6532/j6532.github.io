@@ -1,0 +1,37 @@
+/* video */
+.item_video_wrapper {
+  .img {
+    @include bg-full(1);
+    @include bg-img(cover, 1);
+    @include transition1s();
+  }
+  &:hover {
+    .img {
+      @include transform(scale(1.05));
+    }
+  }
+}
+.artc_video_wrapper, .item_video_wrapper {
+  position: relative;
+  @include bgi_img(16, 9, 100%);
+  border-radius: 4px;
+  overflow: hidden;
+  iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+.video_frame { // responsive iframe
+  padding-top: 100% * 9 / 16; // size
+  position: relative;
+  border-radius: 4px; // style
+  overflow: hidden;
+  margin-bottom: 16px; // layout
+  > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

@@ -1,0 +1,57 @@
+
+/* Form
+-------------------- */
+.form_table {
+  // table-layout: fixed;
+  width: 100%;
+  tr {
+    th,td {
+      padding: $bb_padding;
+    }
+  }
+  thead, tfoot {
+    th,td {
+      padding: $bb_padding/2 $bb_padding;
+      font-size: 14px;
+    }
+  }
+  p {
+    margin: 0px;
+  }
+  &.xxs-responsive {
+    @media #{$m-xs-min} {
+      @import "_tabled";
+    }
+    @media #{$m-xxs-max}  {
+      @import "_tablem";
+    }
+  }
+  &.xs-responsive {
+    @media #{$m-sm-min} {
+      @import "_tabled";
+    }
+    @media #{$m-xs-max}  {
+      @import "_tablem";
+    }
+  }
+  &.sm-responsive {
+    @media #{$m-md-min} {
+      @import "_tabled";
+    }
+    @media #{$m-sm-max}  {
+      @import "_tablem";
+    }
+  }
+  &.no-responsive {
+    @import "_tabled";
+  }
+}
+table.form_table {
+  border-top: 1px solid $bb_bd;
+  .blocky_header + & {
+    border-top: 0;
+  }
+  &:nth-child(1) {
+    border: 0;
+  }
+}

@@ -1,0 +1,226 @@
+$editor:  editor;
+
+.#{$editor} {
+  padding: $pd_m;
+  position: relative;
+  * {
+    max-width: 100% !important;
+  }
+  img {
+    // width: unset !important;
+    height: auto !important;
+  }
+  h1,h2,h3,h4 {
+    color: $hl;
+    margin-top: 10px;
+    line-height: 1.8em;
+    font-weight: $font_weight_bold;
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+  }
+  h1, .h1 {
+    font-size: 30px;
+  }
+  h2, .h2 {
+    font-size: 24px;
+  }
+  h3, .h3 {
+    font-size: 20px;
+  }
+  h4, .h4 {
+    font-size: 18px;
+    font-weight: $font_weight_bold;
+  }
+  
+  ul,ol {
+    margin: 8px 0;
+    padding: 0;
+    > li {
+      line-height: 1.6em;
+      position: relative;
+      margin-bottom: 5px;
+    }
+  }
+  /* ul */
+  ul {
+    margin: 8px 0;
+    font-size: inherit;
+    list-style: none;
+    > li {
+      position: relative;
+      padding-left: 1.8em;
+      margin-bottom: 0.4em;
+      font-size: inherit;
+      &:before {
+        content: '';
+        position: absolute;
+        width:  6px;
+        height: 6px;
+        background-color: $hl;
+        left: 0.7em;
+        top: 0.6em;
+        border-radius: 0.2em;
+      }
+    }
+  }
+  /* ol */
+  ol {
+    padding: 0 20px;
+    list-style-type: decimal;
+    padding-left: 1.8em;
+    > li {
+      position: relative;
+      // list-style-type: none;
+      // counter-increment: step-counter;
+      &:before {
+        // content: counter(step-counter);
+        // position: absolute;
+        // left: 0;
+      }
+    }
+  }
+  
+  /* table */
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-color: $lightBorder;
+    border-style: solid;
+    // min-width: 700px;
+    overflow: auto;
+    width: 100%;
+    th, td {
+      border-width: 1px;
+      border-style: solid;
+      border-color: $lightBorder;
+      padding: 8px;
+    }
+    th {
+      background-color: rgba($hl, 0.1);
+      color: $hl;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0;
+    }
+  }
+  /* RWD Table */
+  $edt_table_bd_color: $lightBorder;
+  .tbl_wrapper {
+    overflow-x: auto;
+    &::-webkit-scrollbar {// scrollbar
+      width: 4px;
+      height: 4px;
+    }
+  }
+  @media #{$m-xs-max} {
+    .tbl_shadow {
+      position: relative;
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 5px;
+      }
+      &:before {
+        left: 0;
+        box-shadow: inset 6px 0 9px -7px rgba(0,0,0,0.3);
+      }
+      &:after {
+        right: 0;
+        box-shadow: inset -6px 0 9px -7px rgba(0,0,0,0.3);
+      }
+    }
+    // box-shadow: inset 6px 0 9px -7px rgba(0,0,0,0.3), inset -6px 0 9px -7px rgba(0,0,0,0.3);
+  }
+  
+
+  /* blockquote */
+  blockquote {
+    p {
+      margin: 0;
+    }
+  }
+  /* a */
+  a {
+    color: #3C37C7;
+  }
+  a:hover {
+    color: #3C37C7;
+    text-decoration: underline;
+  }
+  /* buton */
+  input[type=button] {
+    @include btn_main();
+    border-color: transparent;
+    width: auto;
+    padding: 8px 16px;
+    height: auto;
+  }
+  /* RED */
+  @media(max-width: 767px) {
+    h1 {
+      font-size: 26px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    h3 {
+      font-size: 18px; 
+    }
+    h4 {
+      font-size: 16px;
+      font-weight: $font_weight_bold;
+    }
+  }
+}
+.#{$editor}:empty {
+  display: none;
+}
+
+/* Recover Bootstrap
+-------------------- */
+.#{$editor} {
+  /* blockquote */
+  blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+    border-left: 5px solid #eee;
+  }
+  /* hr */
+  hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #eee;
+  }
+  .container.section_simple > .#{$editor} {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+// Uncomplete
+// ------------
+// .tbl_wrapper {
+//   position: relative;
+//   &:before, &:after {
+//     height: 100%;
+//     width: 0;
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     border-left: 1px solid $lightBorder;
+//   }
+//   &:before {
+//     left: 0;
+//   }
+//   &:after {
+//     right: 0;
+//   }
+// }

@@ -1,0 +1,37 @@
+/* ---------------------
+Multiple
+--------------------- */
+
+.select2-multiple-skin {  // &.select2-skin
+  .select2-selection--multiple {
+    letter-spacing: 0px;
+    vertical-align: middle;
+    resize: vertical;
+    max-width: 100%;
+    border: 1px solid $mainBorder;
+    border-radius: 2px;
+    @media(max-width: $screen-xs-max) {
+      min-height: calc(1.8em + 20px);
+    }
+    ul.select2-selection__rendered {
+      display: block;
+      padding: 5px 2px;
+      padding-right: 30px;
+    }
+    ul.select2-selection__rendered li {
+      height: 22px;
+    }
+    .select2-selection__choice {
+      margin: 1px;
+      @media(max-width: $screen-xs-max) {
+        margin: 3px 2px;
+      }
+    }
+  }
+  .select2-container {
+    width: 100% !important;
+  }
+  .select2-container .select2-search--inline .select2-search__field {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,151 @@
+
+
+.list_second {
+  display: block;
+  width: 100%;
+  @include clearfix();
+  // @include parchment(skin);
+  background-color: $ls_bgc_sec;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 3px double $ls_bdc_fir;
+  .item {
+    padding: 8px;
+    @include clearfix();
+  }
+  a {
+    color: inherit;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  // Style
+  .item + .item {
+    border-top: 1px solid $lightBorder;
+  }
+  
+  // in item
+  .title, .date {
+    display: block;
+  }
+  .title {
+    color: $hl;
+    float: left;
+  }
+  
+  .date {
+    float: right;
+    font-size: 85%;
+    color: $lightText;
+  }
+  // ------------
+  @media #{$m-xs-max} {
+    .title, .date {
+      width: 100%;
+    }
+  }
+}
+
+.list_col_1 {
+  .item {
+    &:nth-child(2n+1) {
+      background-color: $ls_bgc_fir;
+    }
+    &:nth-child(2n+2) {
+      background-color: $ls_bgc_sec;
+    }
+  }
+}
+
+/* Statictics */
+.list_second {
+  @at-root {
+    .blocky & {
+      padding-bottom: 0;
+    }
+  }
+}
+
+@mixin list_table_last_item($cols) {
+  // layout
+  @for $i from 1 through $cols+(-1) {
+    &:nth-child(#{$cols}n+#{$i}):nth-last-child(1) {
+      width: 100%-($i+(-1))*100%*1/$cols;
+    }
+  }
+}
+@mixin list_table_skin($cols, $color1, $color2) {
+  $divide: $cols*2;
+  @for $i from 1 through $cols {
+    &:nth-child(#{$divide}n+#{$i}) {
+      background-color: $color1;
+    }
+  }
+  @for $i from $cols+1 through $divide {
+    &:nth-child(#{$divide}n+#{$i}) {
+      background-color: $color2;
+    }
+  }
+}
+
+.list_year, .list_month {
+  border-bottom: 3px double $ls_bdc_fir;
+  margin-bottom: 0px;
+}
+
+.list_year {
+  .item {
+    @include col(xs, 2);
+    @include col(xxs, 3);
+    @media #{$m-xs-min} {
+      $n: 6;
+      @include list_table_last_item($n);
+      @include list_table_skin($n,  $ls_bgc_fir,  $ls_bgc_sec);
+    }
+    @media #{$m-xxs-max} {
+      $n: 4;
+      @include list_table_last_item($n);
+      @include list_table_skin($n,  $ls_bgc_fir,  $ls_bgc_sec);
+    }
+  }// /.item
+}
+
+.list_month {
+  .inner_title {
+    @include col(xs, 1);
+    @include col(xxs, 12);
+  }
+  .inner_content {
+    @include col(xs, 11);
+    @include col(xxs, 12);
+  }
+  .inner_content_item {
+    @include col(xs, 2);
+    @include col(xxs, 3);
+    @include col(md, 1);
+    @media #{$m-xs-min} {
+      $n: 12;
+      @include list_table_last_item($n);
+    }
+    @media #{$m-xxs-max} {
+      $n: 4;
+      @include list_table_last_item($n);
+    }
+  }// /.item
+
+  .inner_title, .title {
+    text-align: center;
+  }
+  .title {
+    width: 100%;
+  }
+  @media #{$m-xxs-max} {
+    .item {
+      padding-top: 0;
+    }
+    .inner_title {
+      border-bottom: 3px double $lightBorder;
+    }
+  }
+
+}

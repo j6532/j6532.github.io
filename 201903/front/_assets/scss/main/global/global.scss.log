@@ -1,0 +1,55 @@
+/* --------------------------
+2018.09.05 - change font size variables into common variables(can be cover by theme)
+2018.10.02 -  delete "prd" style
+2018.11.02 -  Edit structure
+2018.11.02 -  Move _cart.scss to _shop.scss
+2018.11.09 -  Edit Components
+2018.11.19 -  Edit _pluginFix
+2018.11.28 -  Edit _basicBlock
+              Edit _bootstrapFix
+              Edit _variables
+2018.11.29 -  Modify _basicBlock to _blocky    
+              Edit _inputInline 
+              Edit _column     
+              Edit _mixins      
+2018.11.30 -  Edit _editor   
+              Edit _sidebar  
+2018.12.03 -  Edit _blocky 
+2018.12.04 -  Edit _unitInput
+              Edit _attach
+              Edit _btnAction
+              Edit _button, _variables
+2018.12.05 -  Edit _editor
+
+2018.12.05
+014, Edit _variables, Add _parchment, Delete _docForm, Add _video, Modify Structure, Modify _videoFrame to _video, Edit _owlCarouselDefault, Edit mixin/_owl-carousel
+
+2018.12.06
+015, Edit _variables & _tag, _btnAction, _sidebar, edit _gridSystem 
+
+2018.12.11
+015, Edit _editor, _column, _columnd 
+
+2018.12.12
+016, Edit _gridSystem, mixin/_custom, _default, 
+
+2018.12.30
+016, Edit _footer 
+
+2018.12.21
+016, Edit mixin/_custom, _eventForm, blocky/_stepper, _variables, _checkbox 
+
+2019.01.09
+016, Edit _typography
+
+2019.01.14
+016, edit _editor(copy from 012.jingle-shop), _columnm
+
+
+shop-basic, 
+2019.02.20, edit _gridSystem;
+2019.02.21, edit _clearfix, _sidebar;
+2019.02.22, edit _variables;
+2019.02.23, edit _button, _gridSystem;
+
+-------------------------- */

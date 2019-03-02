@@ -1,0 +1,38 @@
+.crsl_basic,
+.grid_basic,
+.list_basic {
+  @include clearfix();
+  .item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    // padding: 0px;
+  }
+
+  // IMG
+  // -------------
+  .inner,.img_wrapper {
+    display: block;
+    border-radius: 0px;
+    overflow: hidden;
+    position: relative;
+  }
+  .img {
+    @include transition1s();
+    @include bgi_img(1, 1, 100%);
+  }
+
+  // Content
+  // -------------
+  .content_wrapper {
+    position: relative;
+  }
+  .content {
+    @include transition1s();
+  }
+  .title {
+    margin: 0;
+  }
+  .dsc {}
+  
+}

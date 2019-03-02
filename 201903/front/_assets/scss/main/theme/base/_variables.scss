@@ -1,0 +1,125 @@
+// ===========================
+// Fonts
+// ===========================
+/* Import
+----------------------------- */
+
+
+/* 'Rubik' */
+@import url('https://fonts.googleapis.com/css?family=Rubik:400');
+/* Philosopher */
+@import url('https://fonts.googleapis.com/css?family=Philosopher');
+/* ----------------------------------------------- */
+
+$main-font:       'Rubik', 'Microsoft Jhenghei', sans-serif;
+$alt-font:        'Philosopher', 'Microsoft Jhenghei', sans-serif;
+
+$lagn2-alt-font:  'Philosopher', 'Microsoft Jhenghei', sans-serif;
+
+// ===========================
+// Colors
+// ===========================
+$hl:            #193625;
+$hl2nd:         #3a4940;
+$hl3rd:         #6b2020;
+$hl4th:         #561d1d;
+
+$red:           #d55340;
+
+// Situation
+$success:       #6ec450;
+$info:          #2fc6cc;
+$warning:       #ffb807;
+
+// Text
+$mainText:      #4d4d4d; //Text
+$lightText:     #727272;
+$exLightText:   #999;
+
+// Wrong(Fixing)
+$exlightText:   $exLightText;
+
+// Border
+$mainBorder:    #ccc; 
+$lightBorder:   #e1e1e1;
+$exLightBorder: #f1f1f1;
+$secondBorder:  #f6eedd;
+
+// Background
+$mainBg:        #fff; //Background
+$lightBg:       #efefef;
+$exLightBg:     #f9f9f9;
+$secondBg:      #fffdf3;
+$thirdBg:       #f7f2f2;
+$strongBg:      #e7d9d9;
+
+// =========================== 
+// Blocky
+// ===========================
+$hl_bg:             rgba($hl2nd,1);
+$hl_bd:             rgba($hl2nd,1);
+$hl_cl:             white;
+$bb_bg:             $exLightBg;
+$bb_bd:             $lightBorder;
+$bb_hd_sec_bg:      lighten($exLightBg,1);
+$bbt_th_bg:         $bb_hd_sec_bg;
+/* tab */
+$bbt_radius:        4px;
+$bbt_bg:            $lightBg;
+/* Column */
+$fc_pd:             4px;
+$fc_txt_size:       14px;
+$fc_bdc:            $lightBorder;
+// =========================== 
+// Stepper
+// ===========================
+$st_bg:         $bb_bg;
+$st_bd:         rgba($white,0.2);
+$st_color:      $mainText;
+$st_tx_cl:      $mainText;
+$st_act_bg:     $hl;
+$st_act_st_cl:  white;
+$st_act_tx_cl:  white;
+
+// =========================== 
+// Tag
+// ===========================
+$tag_font_color:    #fff;
+
+$tag_default:       #ffae32;
+$tag_success:       rgba($success,0.65);
+$tag_info:          darken(rgba($info,0.65),5%);
+$tag_warning:       darken(rgba($warning,0.65),10%);
+$tag_danger:        darken(rgba($danger,0.6),10%);
+$tag_disabled:      rgba(lighten(black,50),0.6);
+// =========================== 
+// Default Font Size
+// ===========================
+$font_basic_desktop:    14px;
+$font_basic_mobile:     13px;
+
+// ----------------- 
+// Font Weight
+// ----------------- 
+// $font_weight_normal:  400;
+// $font_weight_medium:  500;
+$font_weight_bold:    500; 
+
+
+// =========================== 
+// Theme Media
+// ===========================
+$m-mac-more:  "(min-width:" 1500px ")";
+$m-mac-max:   "(max-width:" 1499px ")";
+$m-mac:       "(max-width:" 1499px ") and (min-width: " 1280px ")";
+$m-mac-min:   "(min-width:" 1280px ")";
+$m-mac-less:  "(max-width:" 1279px ")";
+
+$m-md-desktop-wide: "(max-width:" 1499px ") and (min-width: " 768px ") and (min-aspect-ratio: 16/9)";
+
+// =========================== 
+// Theme
+// ===========================
+$title_main_bd: 4px solid $hl;
+$title_main_bd_mobile: 2px solid $hl;
+$h_font_weight_bold: 700;

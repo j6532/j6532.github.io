@@ -1,0 +1,13 @@
+span.required {
+  position: relative;
+  &:before {
+    content: '*';
+    color: $danger;
+    position: absolute;
+    right: -10px;
+    top: calc(50% - 5px);
+    width: 10px;
+    line-height: 10px;
+    font-weight: $font_weight_bold;
+  }  
+}

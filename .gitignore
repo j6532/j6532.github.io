@@ -1,0 +1,9 @@
+/vendor
+/node_modules
+.env
+.idea
+/public/uploads
+/storage/files
+public/pure_html/.idea/copyright/profiles_settings.xml
+.sass-cache
+desktop.ini

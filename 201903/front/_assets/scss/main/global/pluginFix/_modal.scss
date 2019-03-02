@@ -1,0 +1,24 @@
+.modal-dialog.custom {
+	max-width: 400px;
+	margin: 30px auto;
+	@media (max-width: $screen-xxs-max) {
+		max-width: unset;
+	}
+}
+.modal-dialog {
+	@media (max-width: $screen-xxs-max) {
+		// margin: 0 !important;
+	}
+}
+.modal-body {
+	.row {
+		margin: 0;
+	}
+	[class*=col-lg], 
+	[class*=col-md], 
+	[class*=col-sm], 
+	[class*=col-xs] {
+		padding: 8px;
+	}
+	
+}

@@ -1,0 +1,19 @@
+/* Column Mobile
+----------------- */
+.title ,.content, .item.w-50 {
+  width: 100%;
+}
+.title {
+  padding:  4px 0px 4px;
+}
+.pure_text {
+  padding: 8px 0px 8px 0px;
+}
+&.narrow {
+  padding: 8px 8px;
+}
+&.border {
+  > .item + .item {
+    border-top: 1px solid $fc_bdc;
+  }
+}
