@@ -12,21 +12,25 @@ $(document).ready(function() {
         $modal = $('#'+$(this).attr('data-work-modal'));
 
     $('#gridWebWork .item').css('pointer-events', 'none');
-
-    $('body').addClass('disable-scroll');
     $item
-      .addClass('mask-show')
-      .addClass('img-fade')
-      .addClass('expand');
-    $mask.css({
-      'top': viewTop*-1 - 10,
-      'left': viewLeft*-1 - 10,
-    });
+      .addClass('mask-show');
+    $('body').addClass('disable-scroll');
     $modal.css('display', 'block');
+    
+    setTimeout(function(){
+      
+      $item
+        .addClass('img-fade')
+        .addClass('expand');
+      $mask.css({
+        'top': viewTop*-1 - 10,
+        'left': viewLeft*-1 - 10,
+      });
+      
+    }, 350);
     setTimeout(function(){
       $modal.addClass('open');
-      $('#gridWebWork .item').css('pointer-events', 'auto');
-    }, 750);
+    }, 1100);
 
 
   });
@@ -46,14 +50,15 @@ $(document).ready(function() {
       $item.removeClass('mask-show');
     }, 500);
     setTimeout(function(){
-      $('body').removeClass('disable-scroll');
       $item.removeClass('expand');
       $mask.css({
         'top': 0,
         'left': 0,
       });
       $modal.css('display', 'none');
+      $('body').removeClass('disable-scroll');
       $('.workModal .workModal_close').css('pointer-events', 'auto');
+      $('#gridWebWork .item').css('pointer-events', 'auto');
     }, 1000);
     
     // $modal.removeClass('open');

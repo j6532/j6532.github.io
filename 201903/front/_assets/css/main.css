@@ -5073,6 +5073,7 @@ Pages Layout
   z-index: 0;
   background-color: #f8f8f8;
   opacity: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 .grid_webWork .item.expand {
   z-index: 1040;
@@ -5081,7 +5082,7 @@ Pages Layout
   width: calc(100vw + 10px * 2);
   height: calc(100vh + 10px * 2);
 }
-.grid_webWork .item.mask-show .mask {
+.grid_webWork .item:hover .mask, .grid_webWork .item.mask-show .mask {
   opacity: 1;
 }
 .grid_webWork .item.img-fade .img {

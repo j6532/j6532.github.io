@@ -33,6 +33,7 @@ $modal_open_z: 1040;
 		z-index: 0;
 		background-color: #f8f8f8;
 		opacity: 0;
+		box-shadow: $sOn;
 	}
 	.item {
 		&.expand {
@@ -43,7 +44,7 @@ $modal_open_z: 1040;
 				height: calc(100vh + #{$offset} * 2);
 			}
 		}
-		&.mask-show {
+		&:hover, &.mask-show {
 			.mask {
 				opacity: 1;
 			}
