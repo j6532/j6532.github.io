@@ -5,27 +5,75 @@ $(document).ready(function() {
   // 網頁設計作品
   // -----------------------
   $('#gridWebWork .item').click(function(){
-    var $mask = $(this).find('.mask'),
+    var $item = $(this),
+        $mask = $(this).find('.mask'),
         viewTop =  $mask.offset().top - $(window).scrollTop(),
         viewLeft = $mask.offset().left,
-        $target = $('#'+$(this).attr('data-work-modal')),
-        classOpen = 'open';
+        $modal = $('#'+$(this).attr('data-work-modal'));
 
-    $(this).addClass(classOpen);
-    $target.addClass('open');
+    $('#gridWebWork .item').css('pointer-events', 'none');
+
     $('body').addClass('disable-scroll');
+    $item
+      .addClass('mask-show')
+      .addClass('img-fade')
+      .addClass('expand');
     $mask.css({
-      top: viewTop*-1 - 10,
-      left: viewLeft*-1 - 10,
-    })
+      'top': viewTop*-1 - 10,
+      'left': viewLeft*-1 - 10,
+    });
+    $modal.css('display', 'block');
     setTimeout(function(){
-      $target.addClass('opened');
-    }, 1000);
+      $modal.addClass('open');
+      $('#gridWebWork .item').css('pointer-events', 'auto');
+    }, 750);
 
 
-
-    console.log(viewTop+', '+viewLeft+', '+$(this).attr('data-work-modal'));
   });
+
+  $('.workModal .workModal_close').click(function(){
+    var $modal = $(this).parents('.workModal'),
+        $item = $('[data-work-modal='+$modal.attr('id').replace('#','')+']'),
+        $mask = $item.find('.mask');
+
+    $('.workModal .workModal_close').css('pointer-events', 'none');
+
+    $modal.removeClass('open');
+    setTimeout(function(){
+      $item.removeClass('img-fade');
+    }, 450);
+    setTimeout(function(){
+      $item.removeClass('mask-show');
+    }, 500);
+    setTimeout(function(){
+      $('body').removeClass('disable-scroll');
+      $item.removeClass('expand');
+      $mask.css({
+        'top': 0,
+        'left': 0,
+      });
+      $modal.css('display', 'none');
+      $('.workModal .workModal_close').css('pointer-events', 'auto');
+    }, 1000);
+    
+    // $modal.removeClass('open');
+    // $item.addClass('fading');
+    // setTimeout(function(){
+    //   $('body').removeClass('disable-scroll');
+    //   $modal.css('display', 'none');
+    //   $mask.css('display', 'none');
+    // }, 400);
+    // setTimeout(function(){
+    //   $item.removeClass('open');
+    //   $mask.css({
+    //     'top': 0,
+    //     'left': 0,
+    //   });
+    //   $item.removeClass('fading');
+    // }, 750);
+  });
+
+
 
   // 首頁 產品區塊二
   // -----------------------

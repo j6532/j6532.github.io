@@ -29,19 +29,22 @@
 
 	<!-- 網頁設計作品跳窗 -->
 	<div class="workModal" id="workSanei">
-		<div class="m_header">
-			<h1 class="title">BEAUTE de RICCA</h1>
-			<ul class="notes">
-				<li>美妝產品</li>
-				<li>商品展示型網站</li>
-				<li>CSS動畫設計</li>
-			</ul>
-			<p class="date">2018.08</p>
-			<a href="https://www.beaute-de-ricca.com" class="btn_main" target="_blank">觀看作品</a>
-		</div>
-		<div class="m_body">
-			<img src="../_images/work_sanei.jpg" class="img">
-		</div>
+		<div class="modal_content">
+			<div class="modal_header">
+				<h1 class="title">BEAUTE de RICCA</h1>
+				<ul class="notes">
+					<li>美妝產品</li>
+					<li>商品展示型網站</li>
+					<li>CSS動畫設計</li>
+				</ul>
+				<p class="date">2018.08</p>
+				<a href="https://www.beaute-de-ricca.com" class="btn_main" target="_blank">觀看作品</a>
+			</div><!-- /.modal_header -->
+			<div class="modal_body">
+				<img src="../_images/work_sanei.jpg" class="img">
+			</div><!-- /.modal_body -->
+		</div><!-- /.modal_content -->
+		<i class="workModal_close modal_close"></i>
 	</div><!-- /.workModal -->
 
 

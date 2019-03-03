@@ -14,6 +14,10 @@ $modal_open_z: 1040;
 		@include col(xs, 20%);
 		padding-bottom: $space;
 		overflow: visible;
+		cursor: pointer;
+	}
+	.item, .img, .mask {  
+		@include transition(all ease-in-out .35s);
 	}
 	.img {
 		@include bgi_img(1, 1, 100%);
@@ -25,18 +29,28 @@ $modal_open_z: 1040;
 		top: 0;
 		left: 0;
 		width: calc(100% - #{$space});
-		padding-top: calc(100% - #{$space});
+		height: calc(100% - #{$space});
 		z-index: 0;
 		background-color: #f8f8f8;
-		@include transition(all ease-in-out .35s);
+		opacity: 0;
 	}
 	.item {
-		&.open {
-			z-index: $modal_open_z; 
+		&.expand {
+			z-index: $modal_open_z;
 			.mask {
 				$offset: 10px;
 				width: calc(100vw + #{$offset} * 2);
 				height: calc(100vh + #{$offset} * 2);
+			}
+		}
+		&.mask-show {
+			.mask {
+				opacity: 1;
+			}
+		}
+		&.img-fade {
+			.img {
+				opacity: 0;
 			}
 		}
 	}
@@ -52,12 +66,15 @@ $modal_open_z: 1040;
 	height: 100%;
 	overflow-y: auto;
 	@include clearfix();
-	@include transition(all .3s ease-in-out);
+	&, .modal_content {
+		@include transition(all .5s ease-in-out);
+	}
 	// header
-	.m_header {
+	.modal_header {
+		padding-top: 60px;
 		padding-bottom: 30px;
 	}
-	.m_header, .title, .notes, .date, .workLink {
+	.modal_header, .title, .notes, .date, .workLink {
 		text-align: center;
 	}
 	.notes {
@@ -73,7 +90,7 @@ $modal_open_z: 1040;
 	}
 
 	// body
-	.m_body {
+	.modal_body {
 		padding: 0 60px;
 	}
 	.img {
@@ -85,19 +102,54 @@ $modal_open_z: 1040;
 	// modal
 	display: none;
 	opacity: 0;
-	top: -60px;
-	&.open {
-		display: block;
+	.modal_content {
+		@include transform(translateY(-60px));
 	}
-	&.opened {
+	&.open {
 		opacity: 1;
-		top: 0;  
+		.modal_content {
+			@include transform(translateY(0)); 
+		} 
+	}
+}
+
+.modal_close {
+	$size: 24px;
+	display: block;
+	position: fixed;
+	right: 18px;
+	top: 10px;
+	width: $size;
+	height: $size;
+	cursor: pointer;
+	&:before, &:after {
+		content: '';
+		position: absolute;
+		width: $size;
+		height: 2px;
+		background-color: $lightText;
+		top: calc(50% - 1px);
+		left: 0;
+		@include border-radius(1px);
+		@include transform-origin(center);
+		@include transition1s();
+	}
+	&:before {
+		@include transform(rotate(45deg));
+	}
+	&:after {
+		@include transform(rotate(-45deg));
+	}
+	&:hover {
+		&:before, &:after {
+			background-color: darken($lightText, 25);
+		}
 	}
 }
 
 // body
-.disable-scroll {
-	overflow: hidden;
+.disable-scroll { 
+	overflow-y: hidden;
 	padding-right: 8px;
 }
 
