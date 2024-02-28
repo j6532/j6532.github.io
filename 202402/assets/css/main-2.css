@@ -5351,7 +5351,7 @@ Pages Layout
 }
 @media (min-width: 768px ) {
   .grid_webWork .btn_link {
-    opacity: 0;
+    /* opacity: 0; */
   }
 }
 @media (max-width: 767px ) {
